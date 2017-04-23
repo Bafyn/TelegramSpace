@@ -1,0 +1,16 @@
+@font-face{
+    font-family: MuseoSans500;
+    src: url(/template/fonts/MuseoSansRegular.ttf);
+}
+@font-face{
+    font-family: MuseoSans700;
+    src: url(/template/fonts/MuseoSansBold.ttf);
+}
+@font-face{
+    font-family: MuseoSans300;
+    src: url(/template/fonts/MuseoSansLight.ttf);
+}
+@font-face{
+    font-family: MuseoSans900;
+    src: url(/template/fonts/MuseoSansBlack.ttf);
+}

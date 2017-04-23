@@ -1,0 +1,550 @@
+@media screen and (max-width: 768px){
+    .wrapper{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .nav-top{
+        display: none;
+    }
+    .slider-block {
+        background: #fff;
+        min-height: 537px;
+    }
+    .slider-content {
+        width: 100%;
+        float: none;
+        padding-top: 70px;
+        text-align: center;
+        padding-left: 0;
+    }
+    .slider-content h3 {
+        color: #1a1a1a;
+        font: 46px MuseoSans700;
+        margin-bottom: 36px;
+    }
+
+    .slider-content h3 i {
+        margin-right: 0;
+        width: 100%;
+        display: block;
+    }
+
+    .slider-content p {
+        color: #1a1a1a;
+        font: 16px MuseoSans500;
+        margin-bottom: 45px;
+        line-height: 31px;
+    }
+
+    .slider-content a {
+        color: #fff;
+        display: inline-block;
+        font: 12px MuseoSans700;
+        padding: 22px 35px;
+        text-transform: uppercase;
+        background: #2aa0da;
+    }
+    .img-phone-block{
+        display: block;
+        margin-bottom: 30px;
+    }
+    .main-desc{
+        text-align: left;
+    }
+    .left-block-inf {
+        display: none;
+    }
+    .right-block-inf {
+        float: none;
+        margin-bottom: 85px;
+        width: 100%;
+    }
+    .info-telegram-main{
+        padding: 0;
+    }
+    .info-file-mass h3 {
+        font: 32px MuseoSans700;
+        color: #1a1a1a;
+        padding-left:0;
+        margin-bottom: 25px;
+
+    }
+
+    .info-file-mass p {
+        font: 18px MuseoSans700;
+        color: #1a1a1a;
+        padding-left:0;
+    }
+
+    .info-file-mass p span {
+        font-size: 26px;
+    }
+    .block-charact-telegram {
+        padding: 65px 0;
+    }
+
+    .block-charact-telegram h3 {
+        font: 32px MuseoSans700;
+        margin-bottom: 40px;
+    }
+
+    .block-charact-telegram h4 {
+        font: 18px MuseoSans700;
+    }
+    .block-charact-telegram li {
+        width: 50%;
+        margin-right: 0;
+    }
+    .block-charact-telegram li:nth-child(4){
+        margin-bottom: 65px;
+    }
+    .info-bottom-main {
+        background: url("/template/img/bg/bg-bot.png");
+        height: auto;
+        text-align: center;
+    }
+    .img-left{
+        float: none;
+        width: 100%;
+    }
+    .text-bottom {
+        float: none;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .text-bottom h3 {
+        font: 32px MuseoSans700;
+    }
+    .slider-block-history{
+        display: none;
+    }
+    .bot-history{
+        display: none;
+    }
+    .content-history h3{
+        font-size: 32px;
+    }
+    .left-img-tech {
+        display: none;
+    }
+
+    .right-block-tech {
+        float: none;
+        width: 100%;
+    }
+    .content-history h3 {
+        padding: 0;
+    }
+    .content-history h4{
+        padding: 0;
+    }
+    .content-history h5{
+        padding: 0;
+    }
+
+    .content-history p {
+        padding: 0;
+    }
+    .tech-desc-full{
+        padding: 0;
+    }
+    .list-tech-info li {
+        padding-left: 47px;
+    }
+
+    .list-tech-info li i {
+        left: 0;
+    }
+    .list-tech-info li:nth-child(4) i {
+        left: 0;
+    }
+
+    .list-tech-info li:nth-child(5) i {
+        left: 0;
+    }
+    .text-list-history li {
+        padding: 0 10px;
+    }
+    .text-list-history li:before {
+        left: 0;
+    }
+    .title-tech {
+        padding-left: 45px;
+    }
+    .title-tech i {
+        left: 0;
+    }
+    .left-canal{
+        float: none;
+        width: 100%;
+    }
+    .right-canal{
+        width: 100%;
+        float: none;
+    }
+    .info-file-mass-2{
+        background-size: cover;
+    }
+    .info-file-mass-2 h3{
+        font-size: 32px;
+    }
+    .list-canal{
+        background: #fff;
+    }
+    .list-canal li {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        height: 168px;
+        background-size: 100%;
+        margin-bottom: 5px;
+    }
+    .block-catalog{
+        text-align: left;
+    }
+    .slider-block-catalog {
+        background: url("/template/img/elements/phone-bg.png") no-repeat top center;
+        min-height: 255px;
+    }
+    .slider-canal-slider {
+        background: url("/template/img/elements/phone-bg-2.png") no-repeat top center;
+        min-height: 255px;
+    }
+    .segment-category-canal{
+        width: 100%;
+        float: none;
+    }
+    .title-text-category{
+        width: 80%;
+        float: left;
+    }.desc-category{
+         width: 80%;
+         padding-top: 18px;
+     }
+    .info-bots-title{
+        width: 70%;
+    }
+    .info-bots-title h3{
+        font-size: 23px;
+    }
+    .full-info-desc-canal{
+        width: 100%;
+    }
+    .segment-info-canal{
+        width: 32%;
+        padding-left: 65px;
+    }
+    .segment-info-canal p{
+        color: #fff;
+        font: 16px MuseoSans700;
+        line-height: 20px;
+    }
+    .segment-info-canal p span{
+        font: 13px MuseoSans500;
+    }
+    .segment-info-canal i{
+        position: absolute;
+        left: 15px;
+
+    }
+    .img-custom{
+        left: 5px !important;
+        top:20px !important;
+    }
+    .slider-block-manual {
+        background: url("/template/img/elements/phone-bg-3.png") no-repeat top center;
+        min-height:255px;
+    }
+    .left-block-bots{
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+    .right-block-bots{
+        width: 100%;
+        text-align: center;
+    }
+    .img-bots-seg{
+        width: 15%;
+        float: left;
+    }
+    .block-text-bots{
+        width: 65%;
+        padding-left: 15px;
+        float: left;
+    }
+    .block-text-bots p{
+        font-size: 14px;
+    }
+    .slider-block-bots-2{
+        background: url("/template/img/elements/phone-bg-5.png") no-repeat left center;
+        min-height: 225px;
+    }
+    .info-bots-title{
+        width: 70%;
+        padding-left: 20px;
+        float: left;
+    }
+    .blokc-text-desc-sticer{
+        width: 100%;
+        float: none;
+        margin: 0;
+        border: 0;padding: 0;
+    }.blokc-text-desc-sticer-2{
+         width: 100%;
+         float: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+     }
+     .sticer-img{
+         display: none;
+     }
+    .id-phone-stick{
+        display: block;
+        margin-bottom: 30px;
+    }
+    .segment-sticer{
+        padding: 0;
+    }
+    .content-stiker > .wrapper > p{
+        padding: 0;
+    }
+    .slider-block-sticer{
+        background: url("/template/img/elements/phone-bg-6.png") no-repeat top center;
+        min-height: 225px;
+    }
+    header{
+        display: none;
+    }
+    .phone-header{
+        display: block;
+    }
+    .menu-phone-btn {
+        display: block;
+    }
+    .contentCanalAdd{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .slider-block-bots{
+        background: url("/template/img/elements/phone-bg-4.png") no-repeat top center;
+        height: 225px;
+    }
+    .block-manual-stiker h3{
+        padding-left: 0;
+    }
+    .block-manual-stiker h4{
+        padding-left: 0;
+    }
+    .block-manual-stiker p{
+        padding-left: 0;
+    }
+    .slider-block-tech h3{
+        font: 32px MuseoSans700;
+        line-height: 60px;
+    }
+    .slider-block-tech {
+        background: url("/template/img/elements/phone-bg-7.png") no-repeat top center;
+        min-height: 225px;
+        text-align: center;
+        padding-top: 30px;
+    }
+    .block-title-head{
+        width: 100%;
+        float: none;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .block-title-head h3{
+        color: #fff;
+        font: 32px MuseoSans700;
+        line-height: 60px;
+    }
+    .slider-canal-slider h3{
+        color: #fff;
+        font: 32px MuseoSans700;
+        line-height: 30px;
+    }
+    .slider-manual{
+        width: 100%;
+        padding-top: 40px;
+    }
+    .slider-manual h3{
+        color: #fff;
+        font: 32px MuseoSans700;
+        line-height: 70px;
+    }
+    .slider-manual p{
+        display: none;
+    }
+    .slider-block-post {
+        background: url("/template/img/bg/bg-post.png") no-repeat right center;
+        min-height: 539px;
+        padding-top: 145px;
+        text-align: center;
+    }
+    .slider-block-post h3{
+        color: #fff;
+        font: 32px MuseoSans700;
+        line-height: 30px;
+    }
+    .slider-block-post p{
+        color: #fff;
+        font: 18px MuseoSans500;
+        line-height: 30px;
+        margin-top: 65px;
+    }
+    .slider-post{
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+    .img-poat-block{
+        width: 100%;
+        float: none;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .text-prev-post{
+        width: 100%;
+        float: none;
+        padding-left: 0;
+        font: 16px MuseoSans500;
+
+    }
+    .photo-post{
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+    .top-post-text{
+        width: 100%;
+        float: none;
+        padding-left: 0;
+    }
+    .desktop-prog-down ul{
+        width: 100%;
+    }
+    .desktop-prog-down li{
+        float: none;
+        margin-right: 0;
+    }
+    .desktop-prog-down li a{
+        margin: 15px auto !important;
+    }
+    .down-phone-block ul{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .down-phone-block li{
+        float: none;
+        margin-right: 0;
+    }
+    .down-phone-block li a{
+        margin: 15px auto !important;
+    }
+}
+@media screen and (max-width: 440px){
+    .label-1{
+        width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+    .inp-form{
+        width:100%;
+    }
+    .menu-phone-btn{
+        right: 14px;
+    }
+    .list-canal li{
+        height: 118px;
+    }
+    .list-canal li a span{
+        padding-top: 60px;
+    }
+    .add-canal-cat{
+        right: 0;
+    }
+    .block-title-head h3{
+        color: #fff;
+        font: 22px MuseoSans700;
+        line-height: 30px;
+    }
+    .slider-canal-slider h3{
+        color: #fff;
+        font: 22px MuseoSans700;
+        line-height: 30px;
+    }
+    .slider-manual h3{
+        color: #fff;
+        font: 22px MuseoSans700;
+        line-height: 50px;
+    }
+    .slider-block-post h3{
+        font: 24px MuseoSans700;
+
+    }
+    .slider-block-post h3 i{
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .slider-block-post p{
+        line-height: 25px;
+        font: 16px MuseoSans500;
+        margin-top: 35px;
+    }
+    .slider-block-post {
+        background: url("/template/img/bg/bg-post.png") no-repeat right center;
+        min-height: 439px;
+        padding-top: 50px;
+        text-align: center;
+    }
+    .data-post i{
+        position: absolute;
+        left:0;
+        top:-2px;
+    }
+    .data-post{
+        float: none;
+        color: #b8c5cf;
+        font-size: 15px;
+        position: relative;
+        display: block;
+        padding-left: 25px;
+        margin-top: 10px;
+    }
+    .data-post-2 i{
+        position: absolute;
+        left:0;
+        top:-2px;
+    }
+    .data-post-2{
+        float: none;
+        color: #b8c5cf;
+        font-size: 15px;
+        position: relative;
+        display: block;
+        padding-left: 25px;
+        margin-top: 10px;
+    }
+    .slider-block-download{
+        padding-top: 40px;
+    }
+    .down-btn{
+        width: 100%;
+        padding-left: 50px;
+        font-size: 17px;
+    }
+    .down-btn span{
+        font: 13px MuseoSans500;
+        color: #535f6a;
+    }
+    .down-btn i{
+        position: absolute;
+        left: 7px;
+        top:25px;
+    }
+}
