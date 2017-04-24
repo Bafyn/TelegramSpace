@@ -1,39 +1,44 @@
 <div class="wrapper">
-    <div class="slider-block-bots">
+    <i class="fa fa-cogs im_first_block_background cat_about_bots max_<?= $data['about_bots']['first_block_background']['max_size'] ?>"
+       aria-hidden="true"></i>
+    <div class="slider-block-bots"
+         style="background-image: url('/template/img/elements/<?= $data['about_bots']['first_block_background']['code'] ?>')">
     </div>
     <div class="block-info-bots">
-        <h3>Боты Telegram</h3>
-        <p>
-            Дополнительное удобство пользования Telegram придают боты. По сути, это компьютерные программы, которые
-            выполняют определенные действия пользователей. Внешне боты выглядят как пользовательские аккаунты, а общение
-            с ними представляет собой написание определенных слов, которые запускают в действие определенные алгоритмы
-            действий. Для того, чтобы понять, что это аккаунт бота, а не человека, все они в обязательном порядке должны
-            содержать буквосочетание «bot». Например, <span class="color-bir">@movie_bot, @nationalgeographic_bot,  @BotFather</span>
-            и т.д.
-        </p><br><br>
-        <h4>Чем полезны боты в Telegram</h4>
-        <p>
-            Бот позволяет сделать Telegram самодостаточной системой. То есть, не выходя из этого приложения можно, что
-            называется в пару кликов узнать прогноз погоды, просмотреть новости, новинки кино, литературы. Насладиться
-            подборкой красивых фотографий природы и т.д. Правильно организованная армия этих умных помощников может
-            очень помочь своему полководцу, то есть вам в экономии времени, путем автоматизации повторяющихся действий.
-        </p>
-        <div class="img-bots">
-            <img src="/template/img/elements/bots-1.png" alt="">
-
-        </div>
         <h3>
-            Где подобрать ботов
+            <i class="fa fa-cogs te_second_block_header cat_about_bots max_<?= $data['about_bots']['second_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_bots']['second_block_header']['code'] ?>
         </h3>
         <p>
-            Сейчас стало модным, а точнее необходимым различным Интернет-ресурсам иметь своих ботов Telegram. Информацию
-            о них, эти ресурсы (СМИ, сайты развлекательной тематики и т.д.), как правило, публикуют в своих кантатных
-            данных.<br><br>
-
-            Но наиболее просто просматривать различные каталоги, посвященные ботам Telegram. Там они расставлены (это
-            точнее, чем разложены, ведь бот – это робот, а он должен стоять) по различным рубрикам, свежести и
-            популярности. Можно также подписаться на один из каналов в Telegram, где выкладывается информация о новых
-            ботах.
+            <i class="fa fa-cogs te_second_block_first_text cat_about_bots max_<?= $data['about_bots']['second_block_first_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_bots']['second_block_first_text']['code'] ?>
+        </p><br><br>
+        <h4>
+            <i class="fa fa-cogs te_second_block_subheader cat_about_bots max_<?= $data['about_bots']['second_block_subheader']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_bots']['second_block_subheader']['code'] ?>
+        </h4>
+        <p>
+            <i class="fa fa-cogs te_second_block_second_text cat_about_bots max_<?= $data['about_bots']['second_block_second_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_bots']['second_block_second_text']['code'] ?>
+        </p>
+        <div class="img-bots">
+            <i class="fa fa-cogs im_third_block_img cat_about_bots max_<?= $data['about_bots']['third_block_img']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <img src="/template/img/elements/<?= $data['about_bots']['third_block_img']['code'] ?>" alt="">
+        </div>
+        <h3>
+            <i class="fa fa-cogs te_fourth_block_header cat_about_bots max_<?= $data['about_bots']['fourth_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_bots']['fourth_block_header']['code'] ?>
+        </h3>
+        <p>
+            <i class="fa fa-cogs te_fourth_block_text cat_about_bots max_<?= $data['about_bots']['fourth_block_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_bots']['fourth_block_text']['code'] ?>
         </p>
         <h3 class="custom-title-bots">
             Как пользоваться ботами
@@ -55,7 +60,6 @@
         </p>
         <div class="img-bots">
             <img src="/template/img/elements/bots-2.png" alt="">
-
         </div>
         <div class="bottom-bots-info">
             <div class="left-block-bots">

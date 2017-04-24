@@ -1,12 +1,20 @@
-<div class="slider-block-manual">
+<div class="slider-block-manual"
+     style="background-image: url('/template/img/bg/<?= $data['create_stickers']['first_block_background']['code'] ?>')">
+    <i class="fa fa-cogs im_first_block_background cat_create_stickers max_<?= $data['create_stickers']['first_block_background']['max_size'] ?>"
+       style="position:relative; left: 70px;"
+       aria-hidden="true"></i>
     <div class="wrapper">
         <div class="slider-manual">
             <h3>
                 <i><img src="/template/img/icon/i-1.png" alt=""></i><br>
-                Создание стикеров
+                <i class="fa fa-cogs te_first_block_header cat_create_stickers max_<?= $data['create_stickers']['first_block_header']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['create_stickers']['first_block_header']['code'] ?>
             </h3>
             <p>
-                Создавай стикеры - сделай свой аккаунт эксклюзивным!
+                <i class="fa fa-cogs te_first_block_text cat_create_stickers max_<?= $data['create_stickers']['first_block_text']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['create_stickers']['first_block_text']['code'] ?>
             </p>
         </div>
     </div>

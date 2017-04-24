@@ -1,6 +1,6 @@
 <?php require_once(ROOT . '/views/layouts/header.php'); ?>
 
-<div class="modalAddCanal">
+<div class="modalAddCanal modal_edit_category">
     <div class="contentCanalAdd">
         <div class="btn-close"></div>
         <h3><span class="line-title"></span> Предложить канал</h3>
@@ -52,12 +52,18 @@
 
 <?php require_once(ROOT . '/views/layouts/menu.php'); ?>
 
-<div class="slider-block-catalog">
+<div class="slider-block-catalog"
+     style="background-image: url('/template/img/elements/<?= $data['channels_catalog']['first_block_background']['code'] ?>')">
     <div class="wrapper">
+        <i class="fa fa-cogs im_first_block_background cat_channels_catalog max_<?= $data['channels_catalog']['first_block_background']['max_size'] ?>"
+           aria-hidden="true"
+           style="position:relative; top: 20px;"></i>
         <div class="block-title-head">
             <h3>
                 <i><img src="/template/img/icon/i-1.png" alt=""></i><br>
-                Каталог каналов Telegram
+                <i class="fa fa-cogs te_first_block_header cat_channels_catalog max_<?= $data['channels_catalog']['first_block_header']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['channels_catalog']['first_block_header']['code'] ?>
             </h3>
         </div>
     </div>
@@ -76,19 +82,21 @@
 
     <div class="wrapper">
         <h3>
-            Как подписаться на канал Telegram<br>
+            <i class="fa fa-cogs te_second_block_header cat_channels_catalog max_<?= $data['channels_catalog']['second_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['channels_catalog']['second_block_header']['code'] ?>
+            <br>
             <span>
-                Подписаться можно двумя способами:
+                <i class="fa fa-cogs te_second_block_subheader cat_channels_catalog max_<?= $data['channels_catalog']['second_block_subheader']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['channels_catalog']['second_block_subheader']['code'] ?>
             </span>
 
         </h3>
         <p>
-            1. Если знаешь точное название канала - открыть окно чатов и в поисковую строку ввести это название.
-            Далее из появившегося списка выбрать нужный канал.<br>
-            2. Выбрать канал из имеющегося списка, который для удобства разбит на разделы - наука и образование,
-            юмор и развлечения и т.д. После того, как канал выбран, необходимо нажать кнопку "Присоединиться" внизу
-            экрана
-            (или послать заявку администратору, если канал приватный).
+            <i class="fa fa-cogs te_second_block_text cat_channels_catalog max_<?= $data['channels_catalog']['second_block_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['channels_catalog']['second_block_text']['code'] ?>
         </p>
 
     </div>

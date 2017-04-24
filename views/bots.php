@@ -1,6 +1,6 @@
 <?php require_once(ROOT . '/views/layouts/header.php'); ?>
 
-<div class="modalAddBot">
+<div class="modalAddBot modal_edit_bot">
     <div class="contentCanalAdd">
         <div class="btn-close"></div>
         <h3><span class="line-title"></span> Предложить бота</h3>
@@ -22,7 +22,7 @@
                 Название<span class="obligatory_field">*</span>:<br>
                 <input type="text" required maxlength="50" name="bot_title" style="width: 100%;"
                        placeholder="Название бота"
-                       value="<?= isset($data['title']) ? $data['title'] : "" ?>" class="inp-form" />
+                       value="<?= isset($data['title']) ? $data['title'] : "" ?>" class="inp-form"/>
             </label>
             <label class="label-2">
                 Описание<span class="obligatory_field">*</span>:<br>
@@ -44,7 +44,11 @@
 
 <?php require_once(ROOT . '/views/layouts/menu.php'); ?>
 
-<div class="slider-block-bots-2">
+<div class="slider-block-bots-2"
+     style="background-image: url('/template/img/elements/<?= $data['bots_catalog']['first_block_background']['code'] ?>')">
+    <i class="fa fa-cogs im_first_block_background cat_bots_catalog max_<?= $data['bots_catalog']['first_block_background']['max_size'] ?>"
+       style="position:relative; left: 70px;"
+       aria-hidden="true"></i>
 </div>
 <div class="block-list-bots">
 

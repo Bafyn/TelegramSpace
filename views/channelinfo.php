@@ -1,35 +1,29 @@
 <div class="wrapper">
     <div class="block-info-canal">
-        <h3>Каналы Telegram</h3>
+        <i class="fa fa-cogs te_first_block_header cat_about_channels max_<?= $data['about_channels']['first_block_header']['max_size'] ?>"
+           aria-hidden="true"></i>
+        <h3><?= $data['about_channels']['first_block_header']['code'] ?></h3>
         <p>
-            Каналы Telegram - это аналог групп или сообществ в других социальных сетях. То есть любая информация,
-            опубликованная на канале, мгновенно становится доступной всем его подписчикам. Каналы могут быть публичные и
-            приватные. На первые могут подписаться все желающие, на вторые - только с разрешения владельца
-            канала.<br><br>
-
-            Учитывая огромную и быстрорастущую аудиторию Telegram, каналы являются мощным инструментом донесения нужной
-            их владельцам информации до десятков тысяч подписчиков.<br><br>
-
-            В настоящее время в Telegram насчитываются уже тысячи публичных и приватных каналов всевозможной
-            направленности. И это число ежедневно увеличивается. Может и вы захотите стать владельцем своего канала?
+            <i class="fa fa-cogs te_first_block_text cat_about_channels max_<?= $data['about_channels']['first_block_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_channels']['first_block_text']['code'] ?>
         </p>
     </div>
     <div class="info-canal-img">
-        <img src="/template/img/elements/img-info-canal.png" alt="">
+        <i class="fa fa-cogs im_second_block_img cat_about_channels max_<?= $data['about_channels']['second_block_img']['max_size'] ?>"
+           aria-hidden="true"></i>
+        <img src="/template/img/elements/<?= $data['about_channels']['second_block_img']['code'] ?>" alt="">
     </div>
     <div class="text-info-canal">
         <h4>
-            Вначале о ваших правах, как владельца канала.
+            <i class="fa fa-cogs te_third_block_header cat_about_channels max_<?= $data['about_channels']['third_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_channels']['third_block_header']['code'] ?>
         </h4>
         <p>
-            Вы можете:<br>
-            1. Отправлять сообщения.<br>
-            2. Редактировать и удалять сообщения. При изменении/удалении сообщения оно будет изменено/удалено у всех
-            подписчиков канала.<br>
-            3. Добавлять и удалять нежелательных подписчиков.<br>
-            4. Редактировать название канала, изменять фотографии профиля и темы.<br>
-            5. Закрыть канал.<br>
-            6. Присваивать и расширять полномочия своим администраторам.
+            <i class="fa fa-cogs te_third_block_text cat_about_channels max_<?= $data['about_channels']['third_block_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_channels']['third_block_text']['code'] ?>
         </p><br><br>
         <h4>
             Теперь непосредственно о создании канала Telegram
@@ -58,7 +52,6 @@
             </p>
             <img src="/template/img/elements/img-can-4.png" alt="">
             <p>
-
                 6. При желании можно сразу добавить подписчиков из<br>
                 своего списка контактов
             </p>
@@ -66,13 +59,20 @@
         <div class="clear"></div>
     </div>
 </div>
-<div class="info-file-mass-2">
+<div class="info-file-mass-2"
+     style="background-image: url('/template/img/bg/<?= $data['about_channels']['fourth_block_background']['code'] ?>')">
     <div class="wrapper">
+        <i class="fa fa-cogs im_fourth_block_background cat_about_channels max_<?= $data['about_channels']['fourth_block_background']['max_size'] ?>"
+           aria-hidden="true"></i>
         <h3>
-            У вас есть что сказать миру?
+            <i class="fa fa-cogs te_fourth_block_header cat_about_channels max_<?= $data['about_channels']['fourth_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_channels']['fourth_block_header']['code'] ?>
         </h3>
         <p>
-            Тогда создайте свой Telegram!
+            <i class="fa fa-cogs te_fourth_block_subheader cat_about_channels max_<?= $data['about_channels']['fourth_block_subheader']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['about_channels']['fourth_block_subheader']['code'] ?>
         </p>
     </div>
 </div>

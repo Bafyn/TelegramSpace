@@ -659,19 +659,21 @@ if (!Admin::is_admin_logged()) {
 
 
                     <!--CKEditor-->
-                    <form method="post">
+                    <div class="editor_cont">
+                        <form method="post">
                         <textarea name="editor1" id="editor1" rows="10" cols="80">
                             This is my textarea to be replaced with CKEditor.
                         </textarea>
-                        <div class="editor_submit">
-                            <input type="submit" class="btn btn-lg btn-primary" value="Сохранить"/>
-                        </div>
-                        <script>
-                            // Replace the <textarea id="editor1"> with a CKEditor
-                            // instance, using default configuration.
-                            CKEDITOR.replace('editor1');
-                        </script>
-                    </form>
+                            <div class="editor_submit">
+                                <input type="submit" class="btn btn-lg btn-primary" value="Сохранить"/>
+                            </div>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace('editor1');
+                            </script>
+                        </form>
+                    </div>
                     <!--/CKEditor-->
 
 
@@ -1101,72 +1103,6 @@ if (!Admin::is_admin_logged()) {
             // (string | optional) the class name you want to apply to that specific message
             class_name: 'my-sticky-class'
         });
-
-//        Scroll to top by button
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 0) {
-                $('.go-top').fadeIn();
-            } else {
-                $('.go-top').fadeOut();
-            }
-        });
-        $('.go-top').click(function () {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 400);
-            return false;
-        });
-//        /Scroll to top by button
-
-
-//        Menu action
-        function hideAllTables(not_to_hide_cont) {
-            if (not_to_hide_cont != 1) {
-                $('.channels_table_cont').slideUp();
-            }
-
-            if (not_to_hide_cont != 2) {
-                $('.bots_table_cont').slideUp();
-            }
-
-            if (not_to_hide_cont != 3) {
-                $('.articles_table_cont').slideUp();
-            }
-
-            if (not_to_hide_cont != 4) {
-                $('.stickers_table_cont').slideUp();
-            }
-
-            if (not_to_hide_cont != 5) {
-                $('.categories_table_cont').slideUp();
-            }
-        }
-
-        $('.channels_menu').click(function () {
-            hideAllTables(1);
-            $('.channels_table_cont').slideDown();
-        });
-
-        $('.bots_menu').click(function () {
-            hideAllTables(2);
-            $('.bots_table_cont').slideDown();
-        });
-
-        $('.articles_menu').click(function () {
-            hideAllTables(3);
-            $('.articles_table_cont').slideDown();
-        });
-
-        $('.stickers_menu').click(function () {
-            hideAllTables(4);
-            $('.stickers_table_cont').slideDown();
-        });
-
-        $('.categories_menu').click(function () {
-            hideAllTables(5);
-            $('.categories_table_cont').slideDown();
-        });
-//        /Menu action
 
         return false;
     });

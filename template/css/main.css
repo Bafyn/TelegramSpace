@@ -296,7 +296,7 @@ header {
 }
 
 .info-bottom-main {
-    background: url("/template/img/bg/bg-bot.png") repeat-x;
+    background-repeat: repeat-x;
     height: 447px;
 }
 
@@ -326,7 +326,8 @@ header {
 
 /*history*/
 .slider-block-history {
-    background: url("/template/img/bg/bg-history.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 537px;
 }
 
@@ -399,12 +400,14 @@ header {
 }
 
 .bot-history {
-    background: url("/template/img/elements/bg-his.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 536px;
 }
 
 .slider-block-tech {
-    background: url("/template/img/bg/bg-tech.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 537px;
     text-align: center;
     padding-top: 170px;
@@ -525,7 +528,8 @@ header {
 }
 
 .slider-block-catalog {
-    background: url("/template/img/elements/bg-slide-cat.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 441px;
 }
 
@@ -581,12 +585,14 @@ header {
 }
 
 .slider-block-manual {
-    background: url("/template/img/bg/bg-man.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 538px;
 }
 
 .slider-block-sticer {
-    background: url("/template/img/bg/bg-sticer.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 538px;
 }
 
@@ -656,7 +662,8 @@ header {
 }
 
 .slider-block-bots {
-    background: url("/template/img/elements/bg-slide-bots.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     height: 447px;
 }
 
@@ -731,7 +738,8 @@ header {
 }
 
 .slider-block-bots-2 {
-    background: url("/template/img/elements/bg-bots-2.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 502px;
 }
 
@@ -1173,7 +1181,8 @@ header {
 }
 
 .info-file-mass-2 {
-    background: url("/template/img/bg/bg-info.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 319px;
     padding-top: 60px;
 }
@@ -1356,7 +1365,8 @@ header {
 }
 
 .slider-block-post {
-    background: url("/template/img/bg/bg-post.png") no-repeat top center;
+    background-position: top center;
+    background-repeat: no-repeat;
     min-height: 539px;
     padding-top: 145px;
     text-align: center;
@@ -1758,4 +1768,23 @@ header {
 
 .obligatory_field {
     color: red;
+}
+
+.edit_page_part_right {
+    position: absolute !important;
+    left: 70px !important;
+    top: -22px !important;
+}
+
+i[class*='cat'] {
+    color: #792121 !important;
+    font-size: 22px !important;
+    cursor: pointer !important;
+}
+
+.edit_page_part_top {
+    position: relative !important;
+    padding-left: 10px !important;
+    top: 0 !important;
+    left: 0 !important;
 }

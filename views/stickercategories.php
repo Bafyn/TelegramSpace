@@ -1,31 +1,35 @@
-<div class="slider-block-sticer">
+<div class="slider-block-sticer"
+     style="background-image: url('/template/img/bg/<?= $data['stickers_catalog']['first_block_background']['code'] ?>')">
+    <i class="fa fa-cogs im_first_block_background cat_stickers_catalog max_<?= $data['stickers_catalog']['first_block_background']['max_size'] ?>"
+       style="position:relative; left: 70px;"
+       aria-hidden="true"></i>
     <div class="wrapper">
         <div class="slider-manual">
             <h3>
                 <i><img src="/template/img/icon/i-1.png" alt=""></i><br>
-                Стикеры в Telegram
-
+                <i class="fa fa-cogs te_first_block_header cat_stickers_catalog max_<?= $data['stickers_catalog']['first_block_header']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['stickers_catalog']['first_block_header']['code'] ?>
             </h3>
             <p>
-                Создавай стикеры - сделай свой аккаунт эксклюзивным!
+                <i class="fa fa-cogs te_first_block_subheader cat_stickers_catalog max_<?= $data['stickers_catalog']['first_block_subheader']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['stickers_catalog']['first_block_subheader']['code'] ?>
             </p>
         </div>
     </div>
 </div>
 <div class="content-stiker">
     <div class="wrapper">
-        <h3>Стикеры</h3>
+        <h3>
+            <i class="fa fa-cogs te_second_block_header cat_stickers_catalog max_<?= $data['stickers_catalog']['second_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['stickers_catalog']['second_block_header']['code'] ?>
+        </h3>
         <p>
-            Стикеры используются во всех мессенджерах и социальных сетях. Ими никого не удивишь. Оказалось, что
-            небольшой рисунок может точнее, полнее и к тому же быстрее передать мысль собеседнику. По сравнению с более
-            известными смайликами стикеры отличаются более сложным, более детальным рисунком.
-            Павел Дуров, предлагая абсолютно бесплатный мессенджер, был последователен до конца – стикеры в Telegram
-            бесплатны. Здесь не существует разделение на платные и бесплатные комплекты. Это благотворно сказалось на
-            этом инструменте общения. Сейчас по разнообразие комплектов стикеров с Telegram не может сравниться ни один
-            мессенджер или социальная сеть. Их огромное количество и на самые разнообразные темы – начиная от обычных
-            забавных котиков и собачек и заканчивая рисунками и шаржами на политиков, звезд шоу-бизнеса и даже…
-            патриарха РПЦ Кирилла. Еще раз повторяем – все абсолютно бесплатно.
-            Кратко опишем наиболее популярные на наш взгляд в русскоязычном сегменте Telegram.
+            <i class="fa fa-cogs te_second_block_text cat_stickers_catalog max_<?= $data['stickers_catalog']['second_block_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['stickers_catalog']['second_block_text']['code'] ?>
         </p>
         <div class="segment-sticer">
             <div class="sticer-img">
@@ -176,12 +180,9 @@
 
         <div class="bottom-info-sticer">
             <p>
-                Но Telegram не только абсолютно бесплатно предлагает огромное количество самых разнообразных комплектов
-                стикеров.
-                Этот мессенджер позволяет самому создать свой эксклюзивный стикер и, например, преподнести его в
-                качестве очень
-                нетривиального подарка другому пользователю этого мессенджера. Как это сделать, вы можете узнать <a
-                        href="#">здесь</a> .
+                <i class="fa fa-cogs te_third_block_text cat_stickers_catalog max_<?= $data['stickers_catalog']['third_block_text']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['stickers_catalog']['third_block_text']['code'] ?>
             </p>
             <a href="/sticker/manual" class="link-stick">
                 создать стикер

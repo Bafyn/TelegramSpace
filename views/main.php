@@ -22,46 +22,68 @@
 </div>
 <div class="main-desc">
     <div class="wrapper">
-        <h3>
-            Максимальная приватность<bR>
-            <span>Самое главное в Telegram – абсолютная анонимность передаваемых сообщений и файлов.</span>
+        <h3 class="first_block_header">
+            <i class="fa fa-cogs te_first_block_header cat_main max_<?= $data['main']['first_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['main']['first_block_header']['code'] ?><br>
+            <i class="fa fa-cogs te_first_block_subheader cat_main max_<?= $data['main']['first_block_subheader']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <span><?= $data['main']['first_block_subheader']['code'] ?></span>
         </h3>
         <p>
-            На сегодняшний день Telegram – это наиболее защищенный мессенджер, обеспечивающий пользователям максимальную
-            приватность. Владелец Telegram Павел Дуров неоднократно проводил конкурсы по взлому мессенджера с
-            внушительными
-            призовыми. Но тот устоял, и деньги не были выплачены.
+            <i class="fa fa-cogs te_first_block_paragraph cat_main max_<?= $data['main']['first_block_paragraph']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['main']['first_block_paragraph']['code'] ?>
         </p>
     </div>
 </div>
 <div class="info-telegram-main">
     <div class="wrapper">
         <div class="left-block-inf">
-            <img src="/template/img/elements/cif-img.png" alt="">
+            <i class="fa fa-cogs im_second_block_left_img cat_main max_<?= $data['main']['second_block_left_img']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <img src="/template/img/elements/<?= $data['main']['second_block_left_img']['code'] ?>" alt="">
         </div>
         <div class="right-block-inf">
-            <h3>Просто цифры о Telegram</h3>
+            <h3>
+                <i class="fa fa-cogs te_second_block_header cat_main max_<?= $data['main']['second_block_header']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['main']['second_block_header']['code'] ?>
+            </h3>
             <ul>
+                <i class="fa fa-cogs im_second_block_first_item_img cat_main max_<?= $data['main']['second_block_first_item_img']['max_size'] ?>"
+                   aria-hidden="true"></i>
                 <li>
-                    <i><img src="/template/img/icon/c-1.png" alt=""></i>
-                    Аудитория насчитывает более, чем<br>
-                    100 млн человек
+                    <i class="fa fa-cogs edit_page_part_right te_second_block_first_item_text cat_main max_<?= $data['main']['second_block_first_item_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <i><img src="/template/img/icon/<?= $data['main']['second_block_first_item_img']['code'] ?>" alt=""></i>
+                    <?= $data['main']['second_block_first_item_text']['code'] ?>
                 </li>
+                <i class="fa fa-cogs im_second_block_second_item_img cat_main max_<?= $data['main']['second_block_second_item_img']['max_size'] ?>"
+                   aria-hidden="true"></i>
                 <li>
-                    <i><img src="/template/img/icon/c-2.png" alt=""></i>
-                    Ежедневный прирост составляет более, чем<br>
-                    350 тыс человек
+                    <i class="fa fa-cogs edit_page_part_right te_second_block_second_item_text cat_main max_<?= $data['main']['second_block_second_item_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <i><img src="/template/img/icon/<?= $data['main']['second_block_second_item_img']['code'] ?>"
+                            alt=""></i>
+                    <?= $data['main']['second_block_second_item_text']['code'] ?>
                 </li>
+                <i class="fa fa-cogs im_second_block_third_item_img cat_main max_<?= $data['main']['second_block_third_item_img']['max_size'] ?>"
+                   aria-hidden="true"></i>
                 <li>
-                    <i><img src="/template/img/icon/c-3.png" alt=""></i>
-                    Ежедневно через мессенджер пересылается более<br>
-                    15 миллиардов (!) защищенных от взлома сообщений
+                    <i class="fa fa-cogs edit_page_part_right te_second_block_third_item_text cat_main max_<?= $data['main']['second_block_third_item_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <i><img src="/template/img/icon/<?= $data['main']['second_block_third_item_img']['code'] ?>" alt=""></i>
+                    <?= $data['main']['second_block_third_item_text']['code'] ?>
                 </li>
+                <i class="fa fa-cogs im_second_block_fourth_item_img cat_main max_<?= $data['main']['second_block_fourth_item_img']['max_size'] ?>"
+                   aria-hidden="true"></i>
                 <li>
-                    <i><img src="/template/img/icon/c-4.png" alt=""></i>
-                    «Как WhatsApp, только лучше», сказал Папа Римский Франциск и завел свой канал на Telegram.<br>
-                    Теперь наставления от понтифика рассылались<br>
-                    через этот мессенджер.
+                    <i class="fa fa-cogs edit_page_part_right te_second_block_fourth_item_text cat_main max_<?= $data['main']['second_block_fourth_item_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <i><img src="/template/img/icon/<?= $data['main']['second_block_fourth_item_img']['code'] ?>"
+                            alt=""></i>
+                    <?= $data['main']['second_block_fourth_item_text']['code'] ?>
                 </li>
             </ul>
         </div>
@@ -71,13 +93,20 @@
         </a>
     </div>
 </div>
-<div class="info-file-mass">
+<div class="info-file-mass"
+     style="background-image: url('/template/img/bg/<?= $data['main']['third_block_img']['code'] ?>');">
     <div class="wrapper">
+        <i class="fa fa-cogs im_third_block_img cat_main max_<?= $data['main']['third_block_img']['max_size'] ?>"
+           aria-hidden="true"></i>
         <h3>
-            Telegram - это полная свобода
+            <i class="fa fa-cogs te_third_block_header cat_main max_<?= $data['main']['third_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['main']['third_block_header']['code'] ?>
         </h3>
         <p>
-            Telegram допускает пересылку файлов объемов до <span>1,5 Гб!</span>
+            <i class="fa fa-cogs te_third_block_sub_header cat_main max_<?= $data['main']['third_block_sub_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['main']['third_block_sub_header']['code'] ?>
         </p>
     </div>
 </div>
@@ -87,104 +116,132 @@
         <ul>
             <li>
                 <div class="icon-info">
-                    <img src="/template/img/icon/t-1.png" alt="">
+                    <i class="fa fa-cogs im_fourth_block_first_img cat_main max_<?= $data['main']['fourth_block_first_img']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <img src="/template/img/icon/<?= $data['main']['fourth_block_first_img']['code'] ?>" alt="">
                 </div>
                 <h4>
-                    Telegram - высочайшая<br>
-                    приватность
+                    <i class="fa fa-cogs te_fourth_block_first_header cat_main max_<?= $data['main']['fourth_block_first_header']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_first_header']['code'] ?>
                 </h4>
                 <p>
-                    Переданные вами через Telegram<br> информация будет известна<br>
-                    лишь адресату
+                    <i class="fa fa-cogs te_fourth_block_first_text cat_main max_<?= $data['main']['fourth_block_first_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_first_text']['code'] ?>
                 </p>
             </li>
             <li>
                 <div class="icon-info">
-                    <img src="/template/img/icon/t-2.png" alt="">
+                    <i class="fa fa-cogs im_fourth_block_second_img cat_main max_<?= $data['main']['fourth_block_second_img']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <img src="/template/img/icon/<?= $data['main']['fourth_block_second_img']['code'] ?>" alt="">
                 </div>
                 <h4>
-                    Самый быстрый<br>
-                    мессенджер в мире
+                    <i class="fa fa-cogs te_fourth_block_second_header cat_main max_<?= $data['main']['fourth_block_second_header']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_second_header']['code'] ?>
                 </h4>
                 <p>
-                    Сервера Telegram находятся в разных странах и отвечают за свой регион. Именно поэтому мессенджер так
-                    шустро летает
+                    <i class="fa fa-cogs te_fourth_block_second_text cat_main max_<?= $data['main']['fourth_block_second_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_second_text']['code'] ?>
                 </p>
             </li>
             <li>
                 <div class="icon-info">
-                    <img src="/template/img/icon/t-3.png" alt="">
+                    <i class="fa fa-cogs im_fourth_block_third_img cat_main max_<?= $data['main']['fourth_block_third_img']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <img src="/template/img/icon/<?= $data['main']['fourth_block_third_img']['code'] ?>" alt="">
                 </div>
                 <h4>
-                    Идеальный инструмент?<br>
-                    для группового общения
+                    <i class="fa fa-cogs te_fourth_block_third_header cat_main max_<?= $data['main']['fourth_block_third_header']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_third_header']['code'] ?>
                 </h4>
                 <p>
-                    Telegram поддерживает до 200<br> пользователей в одном чате -<Br> абсолютный рекорд!
+                    <i class="fa fa-cogs te_fourth_block_third_text cat_main max_<?= $data['main']['fourth_block_third_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_third_text']['code'] ?>
                 </p>
             </li>
             <li>
                 <div class="icon-info">
-                    <img src="/template/img/icon/t-4.png" alt="">
+                    <i class="fa fa-cogs im_fourth_block_fourth_img cat_main max_<?= $data['main']['fourth_block_fourth_img']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <img src="/template/img/icon/<?= $data['main']['fourth_block_fourth_img']['code'] ?>" alt="">
                 </div>
                 <h4>
-                    Лучший мессенджер<br>
-                    для аудиосообщений
+                    <i class="fa fa-cogs te_fourth_block_fourth_header cat_main max_<?= $data['main']['fourth_block_fourth_header']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_fourth_header']['code'] ?>
                 </h4>
                 <p>
-                    Просто поднесите смартфон к уху и прослушайте<bR> или отправьте аудиосообщение собеседнику или в<br>
-                    чат.
+                    <i class="fa fa-cogs te_fourth_block_fourth_text cat_main max_<?= $data['main']['fourth_block_fourth_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_fourth_text']['code'] ?>
                 </p>
             </li>
             <li>
                 <div class="icon-info">
-                    <img src="/template/img/icon/t-5.png" alt="">
+                    <i class="fa fa-cogs im_fourth_block_fifth_img cat_main max_<?= $data['main']['fourth_block_fifth_img']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <img src="/template/img/icon/<?= $data['main']['fourth_block_fifth_img']['code'] ?>" alt="">
                 </div>
                 <h4>
-                    Telegram - абсолютная<br>
-                    бесплатность
+                    <i class="fa fa-cogs te_fourth_block_fifth_header cat_main max_<?= $data['main']['fourth_block_fifth_header']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_fifth_header']['code'] ?>
                 </h4>
                 <p>
-                    Никакой абонентской платы,<br> никаких платных подписок и<br> никакой рекламы!
+                    <i class="fa fa-cogs te_fourth_block_fifth_text cat_main max_<?= $data['main']['fourth_block_fifth_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_fifth_text']['code'] ?>
                 </p>
             </li>
             <li>
                 <div class="icon-info">
-                    <img src="/template/img/icon/t-6.png" alt="">
+                    <i class="fa fa-cogs im_fourth_block_sixth_img cat_main max_<?= $data['main']['fourth_block_sixth_img']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <img src="/template/img/icon/<?= $data['main']['fourth_block_sixth_img']['code'] ?>" alt="">
                 </div>
                 <h4>
-                    Высочайшая<bR>
-                    индивидуальность
+                    <i class="fa fa-cogs te_fourth_block_sixth_header cat_main max_<?= $data['main']['fourth_block_sixth_header']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_sixth_header']['code'] ?>
                 </h4>
                 <p>
-                    Telegram позволяет сделать свой<br>
-                    аккаунт эксклюзивным, нарисовав<BR>
-                    свой стикер. И, конечно же, все это<br>
-                    абсолютно бесплатно!
+                    <i class="fa fa-cogs te_fourth_block_sixth_text cat_main max_<?= $data['main']['fourth_block_sixth_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['main']['fourth_block_sixth_text']['code'] ?>
                 </p>
             </li>
         </ul>
         <div class="clear">
-
         </div>
     </div>
 </div>
-<div class="info-bottom-main">
+<div class="info-bottom-main"
+     style="background-image: url('/template/img/bg/<?= $data['main']['fifth_block_background_img']['code'] ?>')">
     <div class="wrapper">
+        <i class="fa fa-cogs im_fifth_block_background_img cat_main max_<?= $data['main']['fifth_block_background_img']['max_size'] ?>"
+           aria-hidden="true"
+           style="position:relative; top: 10px;"></i>
         <div class="img-left">
-            <img src="/template/img/elements/img-bottom.png" alt="">
+            <i class="fa fa-cogs im_fifth_block_left_img cat_main max_<?= $data['main']['fifth_block_left_img']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <img src="/template/img/elements/<?= $data['main']['fifth_block_left_img']['code'] ?>" alt="">
         </div>
-        <div class="text-bottom">
+        <div class="text-bottom" style="float: none;">
             <h3>
-                Возможность создать себе идеального<bR>
-                собеседника
+                <i class="fa fa-cogs te_fifth_block_header cat_main max_<?= $data['main']['fifth_block_header']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['main']['fifth_block_header']['code'] ?>
             </h3>
             <p>
-                Речь идет о боте. Он и ответит сразу, и предложит, что посмотреть<br>
-                сегодня вечером, и отличную подборку потрясных снимков со всего мира сделает.<br>
-                В общем, сделает то, на что он был запрограммирован.<br>
-                Можно создать его самому, а можно воспользоваться уже имеющимся,<br>
-                созданным кем-то помощником.
+                <i class="fa fa-cogs te_fifth_block_subheader cat_main max_<?= $data['main']['fifth_block_subheader']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['main']['fifth_block_subheader']['code'] ?>
             </p>
         </div>
         <div class="clear"></div>

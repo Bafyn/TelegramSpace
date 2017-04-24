@@ -4,7 +4,7 @@ $(document).ready(function () {
     });
 
     $(".btn-close").click(function () {
-        $(".modalAddCanal, .modalAddBot").hide();
+        $(".modalAddCanal, .modalAddBot, .modal_edit_content_text, .modal_edit_content_image").hide();
     });
 
     $(".btn-dop-canal").click(function () {
@@ -14,6 +14,137 @@ $(document).ready(function () {
     $(".btn-dop-bot").click(function () {
         $(".modalAddBot").show();
     });
+
+
+//        Scroll to top by button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+            $('.go-top').fadeIn();
+        } else {
+            $('.go-top').fadeOut();
+        }
+    });
+    $('.go-top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 400);
+        return false;
+    });
+//        /Scroll to top by button
+
+
+    function hideAllModals(not_to_hide_modal) {
+        if (not_to_hide_cont != 1) {
+            $('.modal_edit_content_text').slideUp();
+        }
+
+        if (not_to_hide_cont != 2) {
+            $('.modal_edit_content_image').slideUp();
+        }
+
+        if (not_to_hide_cont != 3) {
+            $('.modal_edit_bot').slideUp();
+        }
+
+        if (not_to_hide_cont != 4) {
+            $('.modal_edit_category').slideUp();
+        }
+    }
+
+    $('i[class*="im_"] ').click(function (e) {
+        var content_part = e.target.getAttribute('class').split(' ').filter(function (elem) {
+            return elem.indexOf('im_') == 0;
+        })[0].slice(3);
+        var page_name = e.target.getAttribute('class').split(' ').filter(function (elem) {
+            return elem.indexOf('cat_') == 0;
+        })[0].slice(4);
+        var content_max_size = e.target.getAttribute('class').split(' ').filter(function (elem) {
+            return elem.indexOf('max_') == 0;
+        })[0].slice(4);
+
+        $('.modal_edit_content_image .content_part').val(content_part);
+        $('.modal_edit_content_image .page_name').val(page_name);
+        $('.max_size_of_image_edit_content').text(content_max_size);
+        $('.modal_edit_content_image').show();
+    });
+
+    $('i[class*="te_"] ').click(function (e) {
+        var content_part = e.target.getAttribute('class').split(' ').filter(function (elem) {
+            return elem.indexOf('te_') == 0;
+        })[0].slice(3);
+        var page_name = e.target.getAttribute('class').split(' ').filter(function (elem) {
+            return elem.indexOf('cat_') == 0;
+        })[0].slice(4);
+        var content_max_size = e.target.getAttribute('class').split(' ').filter(function (elem) {
+            return elem.indexOf('max_') == 0;
+        })[0].slice(4);
+
+        $('.modal_edit_content_text .content_part').val(content_part);
+        $('.modal_edit_content_text .page_name').val(page_name);
+        $('.max_amount_of_symbols_edit_content').text(content_max_size);
+        $('.modal_edit_content_text').show();
+    });
+
+    $('.change_content_text_submit').click(function () {
+        alert("Just for a test");
+    });
+
+    $('.change_content_image_submit').click(function () {
+        alert("Just for a test");
+    });
+
+    // Admin menu action
+    function hideAllTables(not_to_hide_cont) {
+        if (not_to_hide_cont != 1) {
+            $('.channels_table_cont').slideUp();
+        }
+
+        if (not_to_hide_cont != 2) {
+            $('.bots_table_cont').slideUp();
+        }
+
+        if (not_to_hide_cont != 3) {
+            $('.articles_table_cont').slideUp();
+        }
+
+        if (not_to_hide_cont != 4) {
+            $('.stickers_table_cont').slideUp();
+        }
+
+        if (not_to_hide_cont != 5) {
+            $('.categories_table_cont').slideUp();
+        }
+
+        if (not_to_hide_cont != 6) {
+            $('.editor_cont').slideUp();
+        }
+    }
+
+    $('.channels_menu').click(function () {
+        hideAllTables(1);
+        $('.channels_table_cont').slideDown();
+    });
+
+    $('.bots_menu').click(function () {
+        hideAllTables(2);
+        $('.bots_table_cont').slideDown();
+    });
+
+    $('.articles_menu').click(function () {
+        hideAllTables(3);
+        $('.articles_table_cont').slideDown();
+    });
+
+    $('.stickers_menu').click(function () {
+        hideAllTables(4);
+        $('.stickers_table_cont').slideDown();
+    });
+
+    $('.categories_menu').click(function () {
+        hideAllTables(5);
+        $('.categories_table_cont').slideDown();
+    });
+    // /Admin menu action
 
     $('.add_category_btn').click(function () {
         $('#modal_edit_category .modal-title').text('Добавить категорию канала');

@@ -1,113 +1,149 @@
-<div class="slider-block-tech">
+<div class="slider-block-tech"
+     style="background-image: url('/template/img/bg/<?= $data['technologies']['first_block_background']['code'] ?>')">
+    <i class="fa fa-cogs im_first_block_background cat_technologies max_<?= $data['technologies']['first_block_background']['max_size'] ?>"
+       aria-hidden="true"></i>
     <h3>
         <i><img src="/template/img/icon/i-1.png" alt=""></i><br>
-        Технологии Telegram
+        <i class="fa fa-cogs te_first_block_header cat_technologies max_<?= $data['technologies']['first_block_header']['max_size'] ?>"
+           aria-hidden="true"></i>
+        <?= $data['technologies']['first_block_header']['code'] ?>
     </h3>
 </div>
 <div class="content-history">
     <div class="wrapper">
         <h3 style="margin-bottom: 30px;">
-            Как работает Telegram
+            <i class="fa fa-cogs te_second_block_header cat_technologies max_<?= $data['technologies']['second_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['technologies']['second_block_header']['code'] ?>
         </h3>
         <p>
-            Сразу заявим, что в мы не будем вдаваться в технические тонкости работы этого мессенджера и рассказывать об
-            использовании алгоритмом аутентификации DH-2048, RSA-2048 или криптографических хеш-алгоритмах MD5, SHA-1 и
-            т. д. Для подавляющего большинства пользователей Telegram это, по большой части, будет непонятно, а значит
-            неинтересно.
+            <i class="fa fa-cogs te_second_block_text cat_technologies max_<?= $data['technologies']['second_block_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['technologies']['second_block_text']['code'] ?>
         </p>
-        <h4>
-            Мы попытаемся, рассказывая о технологии работы, сосредоточиться на том, что это дает пользователям.
-        </h4>
         <span class="title-tech">
            <i><img src="/template/img/icon/tech-1.png" alt=""></i> О защите данных в Telegram
         </span>
         <p>
-            Когда говорят о мессенджере Telegram, часто упоминают о протоколе передачи данных MTProto, придуманного
-            братом Павла Дурова Николаем. Но протокол передачи данных и алгоритм шифрования – это совершенно разные
-            вещи.<br>
-            Тот же протокол MTProto использует несколько алгоритмов шифрования:
+            <i class="fa fa-cogs te_third_block_first_text cat_technologies max_<?= $data['technologies']['third_block_first_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['technologies']['third_block_first_text']['code'] ?>
         </p><br>
         <ul class="text-list-history">
             <li>
-                Для большинства чатов, включая те, где может участвовать до 200 человек, применяется AES с ключом,
-                который известен клиентам и серверу. Это известная схема и с известной принципиальной уязвимостью, так
-                как сервер можно взломать.
+                <i class="fa fa-cogs te_third_block_first_item cat_technologies max_<?= $data['technologies']['third_block_first_item']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['technologies']['third_block_first_item']['code'] ?>
             </li>
             <li>
-                Защищённость обеспечивают только так называемые Secret Chats, в которых используется end-to-end
-                шифрование. Его суть – ключ известен только клиентам и сообщения хранятся лишь на их устройствах. Такие
-                сообщения на серверах вообще не хранятся. При этом можно включить режим самоуничтожения сообщений после
-                прочтения, и они удалятся и с устройств пользователей.
+                <i class="fa fa-cogs te_third_block_first_item cat_technologies max_<?= $data['technologies']['third_block_first_item']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['technologies']['third_block_first_item']['code'] ?>
             </li>
         </ul>
         <p>
-
-            Справедливости ради необходимо сказать, что WhatsApp (март 2016 г) и Viber (апрель 2016 г.) полностью
-            перешли на режим end-to-end шифрования, а не выборочно, как в Telegram.
+            <i class="fa fa-cogs te_third_block_second_text cat_technologies max_<?= $data['technologies']['third_block_second_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['technologies']['third_block_second_text']['code'] ?>
         </p>
         <div class="tech-desc-full">
             <div class="left-img-tech">
-                <img src="/template/img/elements/tech-img.png" alt="">
+                <i class="fa fa-cogs im_third_block_left_img cat_technologies max_<?= $data['technologies']['third_block_left_img']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <img src="/template/img/elements/<?= $data['technologies']['third_block_left_img']['code'] ?>" alt="">
             </div>
             <div class="right-block-tech">
-                <h3>Что еще позволяет Telegram?</h3>
+                <h3>
+                    <i class="fa fa-cogs te_third_block_header cat_technologies max_<?= $data['technologies']['third_block_header']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['technologies']['third_block_header']['code'] ?>
+                </h3>
                 <p>
-                    Было бы наивно считать, что только защищенность обеспечивает такую популярность Telegram. К тому же
-                    WhatsApp по этому параметру уже опережает мессенджер Павла Дурова.
-
-
+                    <i class="fa fa-cogs te_third_block_text cat_technologies max_<?= $data['technologies']['third_block_text']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['technologies']['third_block_text']['code'] ?>
                 </p>
                 <h5>
-                    Рассмотрим другие технические возможности Telegram:
+                    <i class="fa fa-cogs te_third_block_subheader cat_technologies max_<?= $data['technologies']['third_block_subheader']['max_size'] ?>"
+                       aria-hidden="true"></i>
+                    <?= $data['technologies']['third_block_subheader']['code'] ?>
                 </h5>
                 <ul class="list-tech-info">
                     <li>
-                        <i><img src="/template/img/icon/s-1.png" alt=""></i>Поддерживает чаты до 200 участников в
-                        каждом.
+                        <i>
+                            <i class="fa fa-cogs edit_page_part_top im_third_block_first_item_img cat_technologies max_<?= $data['technologies']['third_block_first_item_img']['max_size'] ?>"
+                               aria-hidden="true"></i>
+                            <img src="/template/img/icon/<?= $data['technologies']['third_block_first_item_img']['code'] ?>"
+                                 alt="">
+                        </i>
+                        <i class="fa fa-cogs edit_page_part_top te_third_block_first_item_text cat_technologies max_<?= $data['technologies']['third_block_first_item_text']['max_size'] ?>"
+                           aria-hidden="true"></i>
+                        <?= $data['technologies']['third_block_first_item_text']['code'] ?>
                     </li>
                     <li>
-                        <i><img src="/template/img/icon/s-2.png" alt=""></i>Объем отправляемых файлов до 1,5 Гб.
+                        <i>
+                            <i class="fa fa-cogs edit_page_part_top im_third_block_second_item_img cat_technologies max_<?= $data['technologies']['third_block_second_item_img']['max_size'] ?>"
+                               aria-hidden="true"></i>
+                            <img src="/template/img/icon/<?= $data['technologies']['third_block_second_item_img']['code'] ?>"
+                                 alt="">
+                        </i>
+                        <i class="fa fa-cogs edit_page_part_top te_third_block_second_item_text cat_technologies max_<?= $data['technologies']['third_block_second_item_text']['max_size'] ?>"
+                           aria-hidden="true"></i>
+                        <?= $data['technologies']['third_block_second_item_text']['code'] ?>
                     </li>
                     <li>
-                        <i><img src="/template/img/icon/s-3.png" alt=""></i>Докачка файлов в случае обрыва Интернета.
+                        <i>
+                            <i class="fa fa-cogs edit_page_part_top im_third_block_third_item_img cat_technologies max_<?= $data['technologies']['third_block_third_item_img']['max_size'] ?>"
+                               aria-hidden="true"></i>
+                            <img src="/template/img/icon/<?= $data['technologies']['third_block_third_item_img']['code'] ?>"
+                                 alt="">
+                        </i>
+                        <i class="fa fa-cogs edit_page_part_top te_third_block_third_item_text cat_technologies max_<?= $data['technologies']['third_block_third_item_text']['max_size'] ?>"
+                           aria-hidden="true"></i>
+                        <?= $data['technologies']['third_block_third_item_text']['code'] ?>
                     </li>
                     <li>
-                        <i><img src="/template/img/icon/s-4.png" alt=""></i>Возможность редактирования сообщений после
-                        отправки (максимум спустя двое
-                        суток после отправки – разумеется, это не касается сообщений в секретном чате).
+                        <i>
+                            <i class="fa fa-cogs edit_page_part_top im_third_block_fourth_item_img"
+                               aria-hidden="true"></i>
+                            <img src="/template/img/icon/<?= $data['technologies']['third_block_fourth_item_img']['code'] ?>"
+                                 alt="">
+                        </i>
+                        <i class="fa fa-cogs edit_page_part_top te_third_block_fourth_item_text cat_technologies max_<?= $data['technologies']['third_block_fourth_item_text']['max_size'] ?>"
+                           aria-hidden="true"></i>
+                        <?= $data['technologies']['third_block_fourth_item_text']['code'] ?>
                     </li>
                     <li>
-                        <i><img src="/template/img/icon/s-5.png" alt=""></i>Наличие блог-платформы, позволяющей
-                        полноценно вести издательскую
-                        деятельность – публиковать статьи, вести блог, вставлять фотографии.
+                        <i>
+                            <i class="fa fa-cogs edit_page_part_top im_third_block_fifth_item_img cat_technologies max_<?= $data['technologies']['third_block_fifth_item_img']['max_size'] ?>"
+                               aria-hidden="true"></i>
+                            <img src="/template/img/icon/<?= $data['technologies']['third_block_fifth_item_img']['code'] ?>"
+                                 alt="">
+                        </i>
+                        <i class="fa fa-cogs edit_page_part_top te_third_block_fifth_item_text cat_technologies max_<?= $data['technologies']['third_block_fifth_item_text']['max_size'] ?>"
+                           aria-hidden="true"></i>
+                        <?= $data['technologies']['third_block_fifth_item_text']['code'] ?>
                     </li>
-
                 </ul>
-
             </div>
             <div class="clear">
 
             </div>
         </div>
         <div class="img-history">
-            <img src="/template/img/elements/tech-1.png">
-
+            <i class="fa fa-cogs im_fourth_block_img cat_technologies max_<?= $data['technologies']['fourth_block_img']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <img src="/template/img/elements/<?= $data['technologies']['fourth_block_img']['code'] ?>">
         </div>
-        <h4>Технико-организационные моменты работы Telegram</h4>
+        <h4>
+            <i class="fa fa-cogs te_fifth_block_header cat_technologies max_<?= $data['technologies']['fifth_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['technologies']['fifth_block_header']['code'] ?>
+        </h4>
         <p>
-            Наибольшую уязвимость любого интернет-проекта представляют его сервера. Арестуй их и все. Проект
-            парализован, а конфиденциальная информация перестала быть таковой. Telegram также имеет свои серверы. Без
-            них пока никак. Но они рассредоточены по всему миру (5 дата-центров в 5 точках планеты) и имеют разную
-            юрисдикцию. При необходимости пользователя могут перебрасывать с одного дата-центра в другое.
-            Координирующего центра или центрального хранилища не существует. Поэтому в одночасье полностью заблокировать
-            Telegram не удастся. Для этого потребуется согласованные действия властей многих стран.<br><br>
-
-            Вот, собственно и все, что мы хотели сказать о технологии работы этого мессенджера. Как видите, как не
-            странно, сейчас Telegram не является самым защищенным средством общения. Недаром Павел Дуров скромно так
-            убрал лозунг, с каким он запускал свое новое детище – «Taking back our right to privacy» («Вернём себе право
-            на приватность»). Сейчас уже используется другой – «New era of messaging» («Новая эра обмена сообщениями»).
-            Но то, что Telegram самый удобный и функциональный мессенджер – это точно!
-
+            <i class="fa fa-cogs te_fifth_block_text cat_technologies max_<?= $data['technologies']['fifth_block_text']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <?= $data['technologies']['fifth_block_text']['code'] ?>
         </p>
     </div>
 </div>

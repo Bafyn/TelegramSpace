@@ -1,23 +1,30 @@
-<div class="slider-block-post">
+<i class="fa fa-cogs im_first_block_background cat_articles max_<?= $data['articles']['first_block_background']['max_size'] ?>"
+   style="position:relative; top: 23px; left: 70px;" aria-hidden="true"></i>
+<div class="slider-block-post"
+     style="background-image: url('/template/img/bg/<?= $data['articles']['first_block_background']['code'] ?>')">
     <div class="wrapper">
         <div class="slider-post">
             <h3>
                 <i><img src="/template/img/icon/i-1.png" alt=""></i>
-                Статьи Telegram
-
+                <i class="fa fa-cogs te_first_block_header cat_articles max_<?= $data['articles']['first_block_header']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['articles']['first_block_header']['code'] ?>
             </h3>
             <p>
-                Сборник интересных статей касаемо Telegram, только<br>
-                самые свежие, актуальные новости о работе данного<br>
-                мессенджера и его плюсах и минусах в соответствии<br>
-                с ему подобными сервисами
+                <i class="fa fa-cogs te_first_block_text cat_articles max_<?= $data['articles']['first_block_text']['max_size'] ?>"
+                   aria-hidden="true"></i>
+                <?= $data['articles']['first_block_text']['code'] ?>
             </p>
         </div>
     </div>
 </div>
 <div class="wrapper">
     <div class="content-post-vn">
-        <h3><span class="line-title-2"></span> Интересные статьи</h3>
+        <h3>
+            <i class="fa fa-cogs te_second_block_header cat_articles max_<?= $data['articles']['second_block_header']['max_size'] ?>"
+               aria-hidden="true"></i>
+            <span class="line-title-2"></span><?= $data['articles']['second_block_header']['code'] ?>
+        </h3>
         <div class="segment-post">
             <h4>Сравнение Вконтакте и Telegram <span class="data-post"><i><img src="/template/img/icon/i-4.png" alt=""></i>26.05.2017</span>
             </h4>

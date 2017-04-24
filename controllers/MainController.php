@@ -11,7 +11,7 @@ class MainController extends Controller
 
     public function action_index()
     {
-        $data = $this->model->get_data();
+        $data['main'] = Main::get_page_parts(1);
         $this->view->generate('main.php', $data);
 
         return TRUE;
@@ -19,7 +19,7 @@ class MainController extends Controller
 
     public function action_history()
     {
-        $data = $this->model->get_data();
+        $data['history'] = Main::get_page_parts(2);
         $this->view->generate('history.php', $data);
 
         return TRUE;
@@ -27,7 +27,7 @@ class MainController extends Controller
 
     public function action_texh()
     {
-        $data = $this->model->get_data();
+        $data['technologies'] = Main::get_page_parts(5);
         $this->view->generate('texh.php', $data);
 
         return TRUE;
@@ -43,7 +43,7 @@ class MainController extends Controller
 
     public function action_articles()
     {
-        $data = $this->model->get_data();
+        $data['articles'] = Main::get_page_parts(10);
         $this->view->generate('articles.php', $data);
 
         return TRUE;
