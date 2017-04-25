@@ -2365,11 +2365,15 @@ label {
     margin: 2px 0px;
 }
 
-.table_cont {
+.table_cont, .editor_cont {
     display: none;
     max-height: 600px !important;
     overflow: auto !important;
     margin-bottom: 25px !important;
+}
+
+.editor_cont {
+    max-height: 800px;
 }
 
 .table_cont_active {

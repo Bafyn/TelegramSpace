@@ -25,7 +25,7 @@ class StickerController extends Controller
     public function action_list()
     {
         $data = array();
-        $data['stickers_catalog'] = Main::get_page_parts(8);
+        $data += Main::get_page_parts();
 
         $this->view->generate('stickercategories.php', $data);
 
@@ -35,7 +35,7 @@ class StickerController extends Controller
     public function action_manual()
     {
         $data = array();
-        $data['create_stickers'] = Main::get_page_parts(9);
+        $data += Main::get_page_parts();
 
         $this->view->generate('manual.php', $data);
 

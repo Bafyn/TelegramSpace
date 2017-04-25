@@ -151,7 +151,7 @@ class Admin
         $data['admin'] = static::get_admin_by_id(Data::getCookieParameter('id'));
         $data['channels'] = Channel::get_channels(false);
         $data['active_channels_num'] = Data::get_num_of_active_subjects(0);
-        $data['channel_categories'] = Channel::get_categories();
+        $data['channel_categories'] = Channel::get_categories(false);
         $data['active_categories_num'] = Data::get_num_of_active_subjects(4);
         $data['bots'] = Bot::get_bots(false);
         $data['active_bots_num'] = Data::get_num_of_active_subjects(1);

@@ -1,44 +1,44 @@
 <div class="wrapper">
-    <i class="fa fa-cogs im_first_block_background cat_about_bots max_<?= $data['about_bots']['first_block_background']['max_size'] ?>"
+    <i class="fa fa-cogs image_elem part_77"
        aria-hidden="true"></i>
     <div class="slider-block-bots"
-         style="background-image: url('/template/img/elements/<?= $data['about_bots']['first_block_background']['code'] ?>')">
+         style="background-image: url('<?= $data['part_77']['code'] ?>')">
     </div>
     <div class="block-info-bots">
         <h3>
-            <i class="fa fa-cogs te_second_block_header cat_about_bots max_<?= $data['about_bots']['second_block_header']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_78"
                aria-hidden="true"></i>
-            <?= $data['about_bots']['second_block_header']['code'] ?>
+            <span class="part_78"><?= $data['part_78']['code'] ?></span>
         </h3>
         <p>
-            <i class="fa fa-cogs te_second_block_first_text cat_about_bots max_<?= $data['about_bots']['second_block_first_text']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_79"
                aria-hidden="true"></i>
-            <?= $data['about_bots']['second_block_first_text']['code'] ?>
+            <span class="part_79"><?= $data['part_79']['code'] ?></span>
         </p><br><br>
         <h4>
-            <i class="fa fa-cogs te_second_block_subheader cat_about_bots max_<?= $data['about_bots']['second_block_subheader']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_80"
                aria-hidden="true"></i>
-            <?= $data['about_bots']['second_block_subheader']['code'] ?>
+            <span class="part_80"><?= $data['part_80']['code'] ?></span>
         </h4>
         <p>
-            <i class="fa fa-cogs te_second_block_second_text cat_about_bots max_<?= $data['about_bots']['second_block_second_text']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_81"
                aria-hidden="true"></i>
-            <?= $data['about_bots']['second_block_second_text']['code'] ?>
+            <span class="part_81"><?= $data['part_81']['code'] ?></span>
         </p>
         <div class="img-bots">
-            <i class="fa fa-cogs im_third_block_img cat_about_bots max_<?= $data['about_bots']['third_block_img']['max_size'] ?>"
+            <i class="fa fa-cogs image_elem part_82"
                aria-hidden="true"></i>
-            <img src="/template/img/elements/<?= $data['about_bots']['third_block_img']['code'] ?>" alt="">
+            <img src="<?= $data['part_82']['code'] ?>" alt="">
         </div>
         <h3>
-            <i class="fa fa-cogs te_fourth_block_header cat_about_bots max_<?= $data['about_bots']['fourth_block_header']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_83"
                aria-hidden="true"></i>
-            <?= $data['about_bots']['fourth_block_header']['code'] ?>
+            <span class="part_83"><?= $data['part_83']['code'] ?></span>
         </h3>
         <p>
-            <i class="fa fa-cogs te_fourth_block_text cat_about_bots max_<?= $data['about_bots']['fourth_block_text']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_84"
                aria-hidden="true"></i>
-            <?= $data['about_bots']['fourth_block_text']['code'] ?>
+            <span class="part_84"><?= $data['part_84']['code'] ?></span>
         </p>
         <h3 class="custom-title-bots">
             Как пользоваться ботами

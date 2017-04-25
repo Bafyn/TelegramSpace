@@ -53,17 +53,17 @@
 <?php require_once(ROOT . '/views/layouts/menu.php'); ?>
 
 <div class="slider-block-catalog"
-     style="background-image: url('/template/img/elements/<?= $data['channels_catalog']['first_block_background']['code'] ?>')">
+     style="background-image: url('<?= $data['part_47']['code'] ?>')">
     <div class="wrapper">
-        <i class="fa fa-cogs im_first_block_background cat_channels_catalog max_<?= $data['channels_catalog']['first_block_background']['max_size'] ?>"
+        <i class="fa fa-cogs image_elem part_47"
            aria-hidden="true"
            style="position:relative; top: 20px;"></i>
         <div class="block-title-head">
             <h3>
                 <i><img src="/template/img/icon/i-1.png" alt=""></i><br>
-                <i class="fa fa-cogs te_first_block_header cat_channels_catalog max_<?= $data['channels_catalog']['first_block_header']['max_size'] ?>"
+                <i class="fa fa-cogs text_elem part_48"
                    aria-hidden="true"></i>
-                <?= $data['channels_catalog']['first_block_header']['code'] ?>
+                <span class="part_48"><?= $data['part_48']['code'] ?></span>
             </h3>
         </div>
     </div>
@@ -82,21 +82,18 @@
 
     <div class="wrapper">
         <h3>
-            <i class="fa fa-cogs te_second_block_header cat_channels_catalog max_<?= $data['channels_catalog']['second_block_header']['max_size'] ?>"
-               aria-hidden="true"></i>
-            <?= $data['channels_catalog']['second_block_header']['code'] ?>
+            <i class="fa fa-cogs text_elem part_49" aria-hidden="true"></i>
+            <span class="part_49"><?= $data['part_49']['code'] ?></span>
             <br>
             <span>
-                <i class="fa fa-cogs te_second_block_subheader cat_channels_catalog max_<?= $data['channels_catalog']['second_block_subheader']['max_size'] ?>"
-                   aria-hidden="true"></i>
-                <?= $data['channels_catalog']['second_block_subheader']['code'] ?>
+                <i class="fa fa-cogs text_elem part_50" aria-hidden="true"></i>
+                <span class="part_50"><?= $data['part_50']['code'] ?></span>
             </span>
 
         </h3>
         <p>
-            <i class="fa fa-cogs te_second_block_text cat_channels_catalog max_<?= $data['channels_catalog']['second_block_text']['max_size'] ?>"
-               aria-hidden="true"></i>
-            <?= $data['channels_catalog']['second_block_text']['code'] ?>
+            <i class="fa fa-cogs text_elem part_51" aria-hidden="true"></i>
+            <span class="part_51"><?= $data['part_51']['code'] ?></span>
         </p>
 
     </div>

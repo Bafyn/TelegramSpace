@@ -12,10 +12,12 @@ require_once 'models/Data.php';
 require_once 'models/Channel.php';
 require_once 'components/DB.php';
 require_once 'models/Bot.php';
+require_once 'models/Main.php';
 $params = include('config/db_params.php');
 $GLOBALS['DBH'] = DB::getConnection($params);
+$GLOBALS['DBH']->exec("SET NAMES utf8");
 
-if ($_POST['purpose'] == 'edit_channel') {
+if ($_POST['purpose'] === 'edit_channel') {
     $old_link = Data::getPostParameter('channel_old_link');
     $_SESSION['old_link_channel'] = $old_link;
     $channel = Channel::get_channel($old_link);
@@ -28,7 +30,7 @@ if ($_POST['purpose'] == 'edit_channel') {
     }
 }
 
-if ($_POST['purpose'] == 'delete_channel') {
+if ($_POST['purpose'] === 'delete_channel') {
     $old_link = Data::getPostParameter('channel_old_link');
 
     $sql = 'DELETE FROM `channels` WHERE `link` = :link';
@@ -45,7 +47,7 @@ if ($_POST['purpose'] == 'delete_channel') {
     echo 'error';
 }
 
-if ($_POST['purpose'] == 'edit_bot') {
+if ($_POST['purpose'] === 'edit_bot') {
     $old_link = Data::getPostParameter('bot_old_link');
     $old_username = Data::getPostParameter('bot_old_username');
     $_SESSION['old_link_bot'] = $old_link;
@@ -59,7 +61,7 @@ if ($_POST['purpose'] == 'edit_bot') {
     }
 }
 
-if ($_POST['purpose'] == 'delete_bot') {
+if ($_POST['purpose'] === 'delete_bot') {
     $old_link = Data::getPostParameter('bot_old_link');
 
     $sql = 'DELETE FROM `bots` WHERE `link` = :link';
@@ -76,7 +78,7 @@ if ($_POST['purpose'] == 'delete_bot') {
     echo 'error';
 }
 
-if ($_POST['purpose'] == 'edit_category') {
+if ($_POST['purpose'] === 'edit_category') {
     $old_title = Data::getPostParameter('category_old_title');
     $_SESSION['old_title_category'] = $old_title;
     $category = Channel::get_category_by_title($old_title);
@@ -88,7 +90,7 @@ if ($_POST['purpose'] == 'edit_category') {
     }
 }
 
-if ($_POST['purpose'] == 'delete_category') {
+if ($_POST['purpose'] === 'delete_category') {
     $old_title = Data::getPostParameter('category_old_title');
 
     $sql = 'DELETE FROM `channel_categories` WHERE `title` = :title';
@@ -103,4 +105,95 @@ if ($_POST['purpose'] == 'delete_category') {
     }
 
     echo 'error';
+}
+
+if ($_POST['purpose'] === 'edit_content_text') {
+    $element_id = Data::getPostParameter('element_id');
+    $new_content = Data::getPostParameter('new_content');
+
+    $page_element = Main::get_page_element_by_id($element_id);
+
+    if (!$page_element['id']) {
+        echo 'error';
+        return;
+    }
+
+    if (mb_strlen($new_content) > $page_element['max_size']) {
+        echo 'error';
+        return;
+    }
+
+    $sql = 'UPDATE `page_elements` SET `code` = :new_content WHERE `id` = :element_id';
+    $result = $GLOBALS['DBH']->prepare($sql);
+
+    $result->bindParam(':new_content', $new_content, PDO::PARAM_STR);
+    $result->bindParam(':element_id', $page_element['id'], PDO::PARAM_STR);
+    $result->execute();
+
+    if ($result->rowCount() != 0) {
+        echo 'ok';
+        return;
+    }
+
+    echo 'error';
+}
+
+if ($_POST['purpose'] === 'edit_content_image') {
+    $element_id = Data::getPostParameter('element_id');
+    $page_element = Main::get_page_element_by_id($element_id);
+
+    if (!$page_element['id']) {
+        echo 'error';
+        return;
+    }
+
+    if (!$_FILES['img']['tmp_name']) {
+        echo 'error';
+        return;
+    }
+
+    $extension = strtolower(pathinfo($_FILES['img']['name'], PATHINFO_EXTENSION));
+
+    if ($extension !== 'jpg' && $extension !== 'png') {
+        echo 'error';
+        return;
+    }
+
+    $started_path = mb_substr($page_element['code'], 0, mb_strrpos($page_element['code'], '.'));
+    $old_extension = mb_substr($page_element['code'], mb_strrpos($page_element['code'], '.') + 1);
+    $new_name = $started_path . '.' . $extension;
+
+    if (!move_uploaded_file($_FILES['img']['tmp_name'], mb_substr($new_name, 1))) {
+        echo 'error';
+        return;
+    }
+
+    if ($extension !== $old_extension) {
+        $sql = 'UPDATE `page_elements` SET `code` = :new_image WHERE `id` = :element_id';
+        $result = $GLOBALS['DBH']->prepare($sql);
+
+        $result->bindParam(':new_image', $new_name, PDO::PARAM_STR);
+        $result->bindParam(':element_id', $page_element['id'], PDO::PARAM_STR);
+        $result->execute();
+
+        if ($result->rowCount() != 0) {
+            echo 'ok';
+            return;
+        } else {
+            echo 'error';
+        }
+    }
+
+    echo 'ok';
+}
+
+if ($_POST['purpose'] === 'get_old_content') {
+    $element_id = Data::getPostParameter('element_id');
+    $element = Main::get_page_element_by_id($element_id);
+
+    if (!$element['id']) {
+        echo "error";
+    } else {
+        echo json_encode($element);
+    }
 }

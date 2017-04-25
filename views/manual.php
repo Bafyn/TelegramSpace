@@ -1,20 +1,20 @@
 <div class="slider-block-manual"
-     style="background-image: url('/template/img/bg/<?= $data['create_stickers']['first_block_background']['code'] ?>')">
-    <i class="fa fa-cogs im_first_block_background cat_create_stickers max_<?= $data['create_stickers']['first_block_background']['max_size'] ?>"
+     style="background-image: url('<?= $data['part_94']['code'] ?>')">
+    <i class="fa fa-cogs image_elem part_94"
        style="position:relative; left: 70px;"
        aria-hidden="true"></i>
     <div class="wrapper">
         <div class="slider-manual">
             <h3>
                 <i><img src="/template/img/icon/i-1.png" alt=""></i><br>
-                <i class="fa fa-cogs te_first_block_header cat_create_stickers max_<?= $data['create_stickers']['first_block_header']['max_size'] ?>"
+                <i class="fa fa-cogs text_elem part_95"
                    aria-hidden="true"></i>
-                <?= $data['create_stickers']['first_block_header']['code'] ?>
+                <span class="part_95"><?= $data['part_95']['code'] ?></span>
             </h3>
             <p>
-                <i class="fa fa-cogs te_first_block_text cat_create_stickers max_<?= $data['create_stickers']['first_block_text']['max_size'] ?>"
+                <i class="fa fa-cogs text_elem part_96"
                    aria-hidden="true"></i>
-                <?= $data['create_stickers']['first_block_text']['code'] ?>
+                <span class="part_96"><?= $data['part_96']['code'] ?></span>
             </p>
         </div>
     </div>

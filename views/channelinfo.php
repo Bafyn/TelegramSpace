@@ -1,29 +1,31 @@
 <div class="wrapper">
     <div class="block-info-canal">
-        <i class="fa fa-cogs te_first_block_header cat_about_channels max_<?= $data['about_channels']['first_block_header']['max_size'] ?>"
+        <i class="fa fa-cogs text_elem part_39"
            aria-hidden="true"></i>
-        <h3><?= $data['about_channels']['first_block_header']['code'] ?></h3>
+        <h3>
+            <span class="part_39"><?= $data['part_39']['code'] ?></span>
+        </h3>
         <p>
-            <i class="fa fa-cogs te_first_block_text cat_about_channels max_<?= $data['about_channels']['first_block_text']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_40"
                aria-hidden="true"></i>
-            <?= $data['about_channels']['first_block_text']['code'] ?>
+            <span class="part_40"><?= $data['part_40']['code'] ?></span>
         </p>
     </div>
     <div class="info-canal-img">
-        <i class="fa fa-cogs im_second_block_img cat_about_channels max_<?= $data['about_channels']['second_block_img']['max_size'] ?>"
+        <i class="fa fa-cogs image_elem part_41"
            aria-hidden="true"></i>
-        <img src="/template/img/elements/<?= $data['about_channels']['second_block_img']['code'] ?>" alt="">
+        <img src="<?= $data['part_41']['code'] ?>" alt="">
     </div>
     <div class="text-info-canal">
         <h4>
-            <i class="fa fa-cogs te_third_block_header cat_about_channels max_<?= $data['about_channels']['third_block_header']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_42"
                aria-hidden="true"></i>
-            <?= $data['about_channels']['third_block_header']['code'] ?>
+            <span class="part_42"><?= $data['part_42']['code'] ?></span>
         </h4>
         <p>
-            <i class="fa fa-cogs te_third_block_text cat_about_channels max_<?= $data['about_channels']['third_block_text']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_43"
                aria-hidden="true"></i>
-            <?= $data['about_channels']['third_block_text']['code'] ?>
+            <span class="part_43"><?= $data['part_43']['code'] ?></span>
         </p><br><br>
         <h4>
             Теперь непосредственно о создании канала Telegram
@@ -60,19 +62,19 @@
     </div>
 </div>
 <div class="info-file-mass-2"
-     style="background-image: url('/template/img/bg/<?= $data['about_channels']['fourth_block_background']['code'] ?>')">
+     style="background-image: url('<?= $data['part_46']['code'] ?>')">
     <div class="wrapper">
-        <i class="fa fa-cogs im_fourth_block_background cat_about_channels max_<?= $data['about_channels']['fourth_block_background']['max_size'] ?>"
+        <i class="fa fa-cogs image_elem part_46"
            aria-hidden="true"></i>
         <h3>
-            <i class="fa fa-cogs te_fourth_block_header cat_about_channels max_<?= $data['about_channels']['fourth_block_header']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_44"
                aria-hidden="true"></i>
-            <?= $data['about_channels']['fourth_block_header']['code'] ?>
+            <span class="part_44"><?= $data['part_44']['code'] ?></span>
         </h3>
         <p>
-            <i class="fa fa-cogs te_fourth_block_subheader cat_about_channels max_<?= $data['about_channels']['fourth_block_subheader']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_45"
                aria-hidden="true"></i>
-            <?= $data['about_channels']['fourth_block_subheader']['code'] ?>
+            <span class="part_45"><?= $data['part_45']['code'] ?></span>
         </p>
     </div>
 </div>

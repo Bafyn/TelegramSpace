@@ -45,8 +45,8 @@
 <?php require_once(ROOT . '/views/layouts/menu.php'); ?>
 
 <div class="slider-block-bots-2"
-     style="background-image: url('/template/img/elements/<?= $data['bots_catalog']['first_block_background']['code'] ?>')">
-    <i class="fa fa-cogs im_first_block_background cat_bots_catalog max_<?= $data['bots_catalog']['first_block_background']['max_size'] ?>"
+     style="background-image: url('<?= $data['part_87']['code'] ?>')">
+    <i class="fa fa-cogs image_elem part_87"
        style="position:relative; left: 70px;"
        aria-hidden="true"></i>
 </div>

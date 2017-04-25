@@ -25,7 +25,7 @@ class BotController extends Controller
     public function action_info()
     {
         $data = array();
-        $data['about_bots'] = Main::get_page_parts(6);
+        $data += Main::get_page_parts();
 
         $this->view->generate('botsinfo.php', $data);
 
@@ -35,7 +35,7 @@ class BotController extends Controller
     public function action_list()
     {
         $data = $this->model->get_data();
-        $data['bots_catalog'] = Main::get_page_parts(7);
+        $data += Main::get_page_parts();
 
         if (isset($data['is_offer']) && $data['is_offer'] && $_SESSION['secret_offer_bot'] !== Data::getPostParameter('secret_offer_bot')) {
             $_SESSION['secret_offer_bot'] = Data::getPostParameter('secret_offer_bot');

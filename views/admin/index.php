@@ -30,9 +30,6 @@ if (!Admin::is_admin_logged()) {
 
     <script src="/views/admin/assets/js/chart-master/Chart.js"></script>
 
-    <!--CKEditor-->
-    <script src="/ckeditor/ckeditor.js"></script>
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -526,6 +523,10 @@ if (!Admin::is_admin_logged()) {
                         <i class="fa fa-book"></i>
                         <span>Статьи</span>
                     </a>
+                    <ul class="sub">
+                        <li class="active"><a href="javascript:;" class="articles_menu">Список</a></li>
+                        <li><a href="javascript:;" class="add_article_btn">Добавить статью</a></li>
+                    </ul>
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;" class="stickers_menu">
@@ -544,54 +545,54 @@ if (!Admin::is_admin_logged()) {
                                class="add_category_btn">Добавить категорию</a></li>
                     </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-pencil"></i>
-                        <span>Редактировать страницы</span>
-                    </a>
-                    <ul class="sub">
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_main"
-                               class="modal_edit_page_main">Главная</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_history"
-                               class="modal_edit_page_history">История TELEGRAM</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_about_channels"
-                               class="modal_edit_page_about_channels">О каналах</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_channels_catalog"
-                               class="modal_edit_page_channels_catalog">Каталог каналов</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_technologies"
-                               class="modal_edit_page_technologies">Технологии</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_about_bots"
-                               class="modal_edit_page_about_bots">О ботах</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_bots_catalog"
-                               class="modal_edit_page_bots_catalog">Каталог ботов</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_stickers_catalog"
-                               class="modal_edit_page_stickers_catalog">Каталог стикеров</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_create_stickers"
-                               class="modal_edit_page_create_stickers">Создать стикеры</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_articles"
-                               class="modal_edit_page_articles">Статьи</a>
-                        </li>
-                    </ul>
-                </li>
+                <!--                <li class="sub-menu">-->
+                <!--                    <a href="javascript:;">-->
+                <!--                        <i class="fa fa-pencil"></i>-->
+                <!--                        <span>Редактировать страницы</span>-->
+                <!--                    </a>-->
+                <!--                    <ul class="sub">-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_main"-->
+                <!--                               class="modal_edit_page_main">Главная</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_history"-->
+                <!--                               class="modal_edit_page_history">История TELEGRAM</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_about_channels"-->
+                <!--                               class="modal_edit_page_about_channels">О каналах</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_channels_catalog"-->
+                <!--                               class="modal_edit_page_channels_catalog">Каталог каналов</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_technologies"-->
+                <!--                               class="modal_edit_page_technologies">Технологии</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_about_bots"-->
+                <!--                               class="modal_edit_page_about_bots">О ботах</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_bots_catalog"-->
+                <!--                               class="modal_edit_page_bots_catalog">Каталог ботов</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_stickers_catalog"-->
+                <!--                               class="modal_edit_page_stickers_catalog">Каталог стикеров</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_create_stickers"-->
+                <!--                               class="modal_edit_page_create_stickers">Создать стикеры</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="javascript:;" data-toggle="modal" data-target="#modal_edit_page_articles"-->
+                <!--                               class="modal_edit_page_articles">Статьи</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
             </ul>
             <!-- sidebar menu end-->
         </div>
@@ -657,25 +658,18 @@ if (!Admin::is_admin_logged()) {
                         <div class="alert alert-warning edit_subj_result"><?= $info['warning'] ?></div>
                     <?php } ?>
 
-
                     <!--CKEditor-->
                     <div class="editor_cont">
                         <form method="post">
-                        <textarea name="editor1" id="editor1" rows="10" cols="80">
+                        <textarea name="article_editor" id="article_editor" rows="10" cols="80">
                             This is my textarea to be replaced with CKEditor.
                         </textarea>
                             <div class="editor_submit">
                                 <input type="submit" class="btn btn-lg btn-primary" value="Сохранить"/>
                             </div>
-                            <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor
-                                // instance, using default configuration.
-                                CKEDITOR.replace('editor1');
-                            </script>
                         </form>
                     </div>
                     <!--/CKEditor-->
-
 
                     <div class="row mt channels_table_cont table_cont table_cont_active">
                         <div class="col-md-12">
@@ -1086,6 +1080,11 @@ if (!Admin::is_admin_logged()) {
 
 <!--script for editing subjects-->
 <script src="/template/js/js-realst.js"></script>
+<script src="/ckeditor/ckeditor.js"></script>
+
+<script>
+    CKEDITOR.replace('article_editor');
+</script>
 
 <script type="text/javascript">
     $(document).ready(function () {

@@ -1,20 +1,20 @@
 <div class="slider-block-sticer"
-     style="background-image: url('/template/img/bg/<?= $data['stickers_catalog']['first_block_background']['code'] ?>')">
-    <i class="fa fa-cogs im_first_block_background cat_stickers_catalog max_<?= $data['stickers_catalog']['first_block_background']['max_size'] ?>"
+     style="background-image: url('<?= $data['part_88']['code'] ?>')">
+    <i class="fa fa-cogs image_elem part_88"
        style="position:relative; left: 70px;"
        aria-hidden="true"></i>
     <div class="wrapper">
         <div class="slider-manual">
             <h3>
                 <i><img src="/template/img/icon/i-1.png" alt=""></i><br>
-                <i class="fa fa-cogs te_first_block_header cat_stickers_catalog max_<?= $data['stickers_catalog']['first_block_header']['max_size'] ?>"
+                <i class="fa fa-cogs text_elem part_89"
                    aria-hidden="true"></i>
-                <?= $data['stickers_catalog']['first_block_header']['code'] ?>
+                <span class="part_89"><?= $data['part_89']['code'] ?></span>
             </h3>
             <p>
-                <i class="fa fa-cogs te_first_block_subheader cat_stickers_catalog max_<?= $data['stickers_catalog']['first_block_subheader']['max_size'] ?>"
+                <i class="fa fa-cogs text_elem part_90"
                    aria-hidden="true"></i>
-                <?= $data['stickers_catalog']['first_block_subheader']['code'] ?>
+                <span class="part_90"><?= $data['part_90']['code'] ?></span>
             </p>
         </div>
     </div>
@@ -22,14 +22,14 @@
 <div class="content-stiker">
     <div class="wrapper">
         <h3>
-            <i class="fa fa-cogs te_second_block_header cat_stickers_catalog max_<?= $data['stickers_catalog']['second_block_header']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_91"
                aria-hidden="true"></i>
-            <?= $data['stickers_catalog']['second_block_header']['code'] ?>
+            <span class="part_91"><?= $data['part_91']['code'] ?></span>
         </h3>
         <p>
-            <i class="fa fa-cogs te_second_block_text cat_stickers_catalog max_<?= $data['stickers_catalog']['second_block_text']['max_size'] ?>"
+            <i class="fa fa-cogs text_elem part_92"
                aria-hidden="true"></i>
-            <?= $data['stickers_catalog']['second_block_text']['code'] ?>
+            <span class="part_92"><?= $data['part_92']['code'] ?></span>
         </p>
         <div class="segment-sticer">
             <div class="sticer-img">
@@ -180,9 +180,9 @@
 
         <div class="bottom-info-sticer">
             <p>
-                <i class="fa fa-cogs te_third_block_text cat_stickers_catalog max_<?= $data['stickers_catalog']['third_block_text']['max_size'] ?>"
+                <i class="fa fa-cogs text_elem part_93"
                    aria-hidden="true"></i>
-                <?= $data['stickers_catalog']['third_block_text']['code'] ?>
+                <span class="part_93"><?= $data['part_93']['code'] ?></span>
             </p>
             <a href="/sticker/manual" class="link-stick">
                 создать стикер

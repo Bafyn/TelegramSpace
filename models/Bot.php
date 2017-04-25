@@ -135,11 +135,11 @@ class Bot extends Model
      *
      * @return array - information about bots
      */
-    public static function get_bots($active_only)
+    public static function get_bots($is_only_active)
     {
         $sql = 'SELECT * FROM `bots`';
 
-        if ($active_only) {
+        if ($is_only_active) {
             $sql .= ' WHERE `status` = 1 ORDER BY `rating`';
         }
 

@@ -46,7 +46,7 @@ class Channel extends Model
             }
         }
 
-        $data['categories'] = static::get_categories();
+        $data['categories'] = static::get_categories(true);
 
         return $data;
     }
@@ -142,9 +142,14 @@ class Channel extends Model
      *
      * @return array - information about categories
      */
-    public static function get_categories()
+    public static function get_categories($is_only_active)
     {
         $sql = 'SELECT * FROM `channel_categories`';
+
+        if ($is_only_active) {
+            $sql .= ' WHERE `status` = 1';
+        }
+
         $result = $GLOBALS['DBH']->query($sql);
         $categories = array();
         $i = 0;

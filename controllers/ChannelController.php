@@ -31,7 +31,7 @@ class ChannelController extends Controller
     function action_categories()
     {
         $data = $this->model->get_data();
-        $data['channels_catalog'] = Main::get_page_parts(4);
+        $data += Main::get_page_parts();
 
         if (isset($data['is_offer']) && $data['is_offer'] && $_SESSION['secret_offer_channel'] !== Data::getPostParameter('secret_offer_channel')) {
             $_SESSION['secret_offer_channel'] = Data::getPostParameter('secret_offer_channel');
@@ -50,7 +50,7 @@ class ChannelController extends Controller
 
     public function action_info()
     {
-        $data['about_channels'] = Main::get_page_parts(3);
+        $data = Main::get_page_parts();
         $this->view->generate('channelinfo.php', $data);
 
         return TRUE;
