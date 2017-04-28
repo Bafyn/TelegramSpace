@@ -12,18 +12,6 @@ class Channel extends Model
     {
         $data = array();
 
-        if (Data::isSetGetParameter('category')) {
-            $data['current_category'] = static::get_category_by_id(Data::getGetParameter('category'));
-            if ($data['current_category']) {
-                $data['is_valid_category'] = true;
-                $data['category_channels'] = $this->get_channels_by_category(Data::getGetParameter('category'));
-            } else {
-                $data['is_valid_category'] = false;
-            }
-        } else {
-            $data['is_valid_category'] = false;
-        }
-
         if (Data::isSetPostParameter("offer_channel_submit") && !isset($_SESSION['secret_offer_channel'])) {
             $_SESSION['secret_offer_channel'] = 0;
         }
@@ -47,6 +35,25 @@ class Channel extends Model
         }
 
         $data['categories'] = static::get_categories(true);
+
+        return $data;
+    }
+
+    public function get_particular_channels()
+    {
+        $data = array();
+
+        if (Data::isSetGetParameter('category')) {
+            $data['current_category'] = static::get_category_by_id(Data::getGetParameter('category'));
+            if ($data['current_category']['id']) {
+                $data['is_valid_category'] = true;
+                $data['category_channels'] = $this->get_channels_by_category(Data::getGetParameter('category'));
+            } else {
+                $data['is_valid_category'] = false;
+            }
+        } else {
+            $data['is_valid_category'] = false;
+        }
 
         return $data;
     }
@@ -82,7 +89,7 @@ class Channel extends Model
         }
 
         if (mb_strlen($title) == 0 || mb_strlen($title) > 30) {
-            return 'Длина названия должна быть от 0 до 30 символов!';
+            return 'Длина названия может быть от 1 до 30 символов!';
         }
 
         return 'ok';
@@ -186,7 +193,7 @@ class Channel extends Model
         $sql = 'SELECT * FROM `channels`';
 
         if ($active_only) {
-            $sql .= ' WHERE `status` = 1 ORDER BY `rating`';
+            $sql .= ' WHERE `status` = 1 ORDER BY `rating` DESC';
         }
 
         $result = $GLOBALS['DBH']->query($sql);
@@ -227,7 +234,7 @@ class Channel extends Model
      */
     private function get_channels_by_category($category_id)
     {
-        $sql = 'SELECT * FROM `channels` WHERE `category_id` = :category_id  AND `status` = 1 ORDER BY `rating`';
+        $sql = 'SELECT * FROM `channels` WHERE `category_id` = :category_id  AND `status` = 1 ORDER BY `rating` DESC';
         $result = $GLOBALS['DBH']->prepare($sql);
 
         $result->bindParam(':category_id', $category_id, PDO::PARAM_STR);
@@ -281,6 +288,8 @@ class Channel extends Model
 
         if ($image !== null) {
             $sql .= ', :image';
+        } else {
+            $sql .= ', "' . IMAGE_DEFAULT . '"';
         }
 
         $sql .= ', :status)';
@@ -329,7 +338,7 @@ class Channel extends Model
         }
 
         if (mb_strlen($title) == 0 || mb_strlen($title) > 25) {
-            return 'Длина названия каталога канала может быть от 0 до 25 символов!';
+            return 'Длина названия категории канала может быть от 1 до 25 символов!';
         }
 
         return 'ok';

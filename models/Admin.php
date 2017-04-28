@@ -20,8 +20,8 @@ class Admin
             $_SESSION['secret_edit_bot'] = 0;
         }
 
-        if (Data::isSetPostParameter("edit_article_submit") && !isset($_SESSION['secret_edit_article'])) {
-            $_SESSION['secret_edit_article'] = 0;
+        if (Data::isSetPostParameter("action_article_submit") && !isset($_SESSION['secret_action_article'])) {
+            $_SESSION['secret_action_article'] = 0;
         }
 
         if (Data::isSetPostParameter("edit_sticker_submit") && !isset($_SESSION['secret_edit_sticker'])) {
@@ -32,9 +32,8 @@ class Admin
             $_SESSION['secret_edit_category'] = 0;
         }
 
-
         if (Data::isSetPostParameter('edit_channel_submit') && $_SESSION['secret_edit_channel'] !== Data::getPostParameter('secret_edit_channel')) {
-            $_SESSION['secret_edit_channel'] = Data::getPostParameter('secret_edit_channel');
+//            $_SESSION['secret_edit_channel'] = Data::getPostParameter('secret_edit_channel');
 
             $data['link'] = Data::getPostParameter("channel_link");
             $data['channel_id'] = Channel::get_channel($_SESSION['old_link_channel'])['id'];
@@ -60,13 +59,13 @@ class Admin
                 $data['error'] = $is_data_valid;
             }
 
-            $_SESSION['secret_edit_channel'] = $_SESSION['secret_edit_channel'] . 1;
+//            $_SESSION['secret_edit_channel'] = $_SESSION['secret_edit_channel'] . 1;
 
             return $data;
         }
 
         if (Data::isSetPostParameter('edit_bot_submit') && $_SESSION['secret_edit_bot'] !== Data::getPostParameter('secret_edit_bot')) {
-            $_SESSION['secret_edit_bot'] = Data::getPostParameter('secret_edit_bot');
+//            $_SESSION['secret_edit_bot'] = Data::getPostParameter('secret_edit_bot');
 
             $data['link'] = Data::getPostParameter("bot_link");
             $data['bot_id'] = Bot::get_bot_by_link($_SESSION['old_link_bot'])['id'];
@@ -92,26 +91,60 @@ class Admin
                 $data['error'] = $is_data_valid;
             }
 
-            $_SESSION['secret_edit_bot'] = $_SESSION['secret_edit_bot'] . 1;
+//            $_SESSION['secret_edit_bot'] = $_SESSION['secret_edit_bot'] . 1;
 
             return $data;
         }
 
-        if (Data::isSetPostParameter('edit_article_submit') && $_SESSION['secret_edit_article'] !== Data::getPostParameter('secret_edit_article')) {
-            $_SESSION['secret_edit_article'] = Data::getPostParameter('secret_edit_article');
+        if (Data::isSetPostParameter('action_article_submit') && $_SESSION['secret_action_article'] !== Data::getPostParameter('secret_action_article')) {
+            $data['title'] = Data::getPostParameter("article_title");
+            $data['content'] = $_POST["article_content"];
+            $data['article_id'] = Article::get_article_by_title($_SESSION['old_title_article'])['id'];
+            $data['status'] = !Data::getPostParameter("article_status") ? 2 : 1;
+            $data['is_valid_article'] = true;
 
+            if (!$data['article_id']) {
+                $data['is_valid_article'] = false;
+                $data['error'] = "Произошла ошибка. Попробуйте позже";
+                return $data;
+            }
 
+            $is_data_valid = Article::check_article($data['title'], $_SESSION['old_title_article'] !== $data['title']);
+
+            if ($is_data_valid !== 'ok') {
+                $data['is_valid_article'] = false;
+                $data['error'] = $is_data_valid;
+            }
+
+            return $data;
         }
 
         if (Data::isSetPostParameter('edit_sticker_submit') && $_SESSION['secret_edit_sticker'] !== Data::getPostParameter('secret_edit_sticker')) {
-            $_SESSION['secret_edit_sticker'] = Data::getPostParameter('secret_edit_sticker');
+//            $_SESSION['secret_edit_sticker'] = Data::getPostParameter('secret_edit_sticker');
+            $data['title'] = Data::getPostParameter("sticker_title");
+            $data['description'] = Data::getPostParameter("sticker_description");
+            $data['rating'] = Data::getPostParameter("sticker_rating");
+            $data['status'] = !Data::getPostParameter("sticker_status") ? 2 : 1;
+            $data['sticker_id'] = Sticker::get_sticker_by_title($_SESSION['old_title_sticker'])['id'];
+            $data['is_valid_sticker'] = true;
 
+            if (!$data['sticker_id']) {
+                $data['is_valid_sticker'] = false;
+                $data['error'] = "Произошла ошибка. Попробуйте позже";
+                return $data;
+            }
 
+            $is_data_valid = Sticker::check_sticker($data['title'], $data['description'], $_SESSION['old_title_sticker'] !== $data['title']);
+
+            if ($is_data_valid !== 'ok') {
+                $data['is_valid_sticker'] = false;
+                $data['error'] = $is_data_valid;
+            }
+
+            return $data;
         }
 
         if (Data::isSetPostParameter('edit_category_submit') && $_SESSION['secret_edit_category'] !== Data::getPostParameter('secret_edit_category')) {
-            $_SESSION['secret_edit_category'] = Data::getPostParameter('secret_edit_category');
-
             $data['title'] = Data::getPostParameter("category_title");
             $data['category_id'] = Channel::get_category_by_title($_SESSION['old_title_category'])['id'];
             $data['status'] = !Data::getPostParameter("category_status") ? 2 : 1;
@@ -129,8 +162,6 @@ class Admin
                 $data['is_valid_category'] = false;
                 $data['error'] = $is_data_valid;
             }
-
-            $_SESSION['secret_edit_category'] = $_SESSION['secret_edit_category'] . 1;
 
             return $data;
         }
@@ -155,9 +186,9 @@ class Admin
         $data['active_categories_num'] = Data::get_num_of_active_subjects(4);
         $data['bots'] = Bot::get_bots(false);
         $data['active_bots_num'] = Data::get_num_of_active_subjects(1);
-        $data['articles'] = Article::get_articles();
+        $data['articles'] = Article::get_articles(false);
         $data['active_articles_num'] = Data::get_num_of_active_subjects(2);
-        $data['stickers'] = Sticker::get_stickers();
+        $data['stickers'] = Sticker::get_stickers(false);
         $data['active_stickers_num'] = Data::get_num_of_active_subjects(3);
 
         return $data;
@@ -246,5 +277,79 @@ class Admin
         $row = $result->fetch();
 
         return $row;
+    }
+
+    public function get_new_sticker_data()
+    {
+        if (Data::isSetPostParameter("edit_sticker_submit") && !isset($_SESSION['secret_edit_sticker'])) {
+            $_SESSION['secret_edit_sticker'] = 0;
+        }
+
+        $data = array();
+
+        if (Data::isSetPostParameter('edit_sticker_submit') && $_SESSION['secret_edit_sticker'] !== Data::getPostParameter('secret_edit_sticker')) {
+            $data['title'] = Data::getPostParameter("sticker_title");
+            $data['description'] = Data::getPostParameter("sticker_description");
+            $data['rating'] = Data::getPostParameter("sticker_rating");
+            $data['status'] = !Data::getPostParameter("sticker_status") ? 2 : 1;
+            $data['is_valid_sticker'] = true;
+            $is_data_valid = Sticker::check_sticker($data['title'], $data['description'], true);
+
+            if ($is_data_valid !== 'ok') {
+                $data['is_valid_sticker'] = false;
+                $data['error'] = $is_data_valid;
+            }
+
+            return $data;
+        }
+    }
+
+    public function get_new_category_data()
+    {
+        if (Data::isSetPostParameter("edit_category_submit") && !isset($_SESSION['secret_edit_category'])) {
+            $_SESSION['secret_edit_category'] = 0;
+        }
+
+        $data = array();
+
+        if (Data::isSetPostParameter('edit_category_submit') && $_SESSION['secret_edit_category'] !== Data::getPostParameter('secret_edit_category')) {
+            $data['title'] = Data::getPostParameter("category_title");
+            $data['status'] = !Data::getPostParameter("category_status") ? 2 : 1;
+            $data['is_valid_category'] = true;
+
+            $is_data_valid = Channel::check_category($data['title'], true);
+
+            if ($is_data_valid !== 'ok') {
+                $data['is_valid_category'] = false;
+                $data['error'] = $is_data_valid;
+            }
+
+            return $data;
+        }
+    }
+
+    public function get_new_article_data()
+    {
+        if (Data::isSetPostParameter("action_article_submit") && !isset($_SESSION['secret_action_article'])) {
+            $_SESSION['secret_action_article'] = 0;
+        }
+
+        $data = array();
+
+        if (Data::isSetPostParameter('action_article_submit') && $_SESSION['secret_action_article'] !== Data::getPostParameter('secret_action_article')) {
+            $data['title'] = Data::getPostParameter("article_title");
+            $data['status'] = !Data::getPostParameter("article_status") ? 2 : 1;
+            $data['content'] = $_POST['article_content'];
+            $data['is_valid_article'] = true;
+
+            $is_data_valid = Article::check_article($data['title'], true);
+
+            if ($is_data_valid !== 'ok') {
+                $data['is_valid_article'] = false;
+                $data['error'] = $is_data_valid;
+            }
+
+            return $data;
+        }
     }
 }

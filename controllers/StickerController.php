@@ -16,15 +16,12 @@ class StickerController extends Controller
 
     function action_index()
     {
-        $data = $this->model->get_data();
-        $this->view->generate('stickercategories.php', $data);
 
-        return TRUE;
     }
 
     public function action_list()
     {
-        $data = array();
+        $data['stickers'] = $this->model->get_data();
         $data += Main::get_page_parts();
 
         $this->view->generate('stickercategories.php', $data);
@@ -34,8 +31,7 @@ class StickerController extends Controller
 
     public function action_manual()
     {
-        $data = array();
-        $data += Main::get_page_parts();
+        $data = Main::get_page_parts();
 
         $this->view->generate('manual.php', $data);
 

@@ -20,70 +20,31 @@
 <div class="wrapper">
     <div class="content-post-vn">
         <h3>
-            <i class="fa fa-cogs text_elem part_100"
-               aria-hidden="true"></i>
+            <i class="fa fa-cogs text_elem part_100" aria-hidden="true"></i>
             <span class="line-title-2"></span><span class="part_100"><?= $data['part_100']['code'] ?></span>
         </h3>
-        <div class="segment-post">
-            <h4>Сравнение Вконтакте и Telegram <span class="data-post"><i><img src="/template/img/icon/i-4.png" alt=""></i>26.05.2017</span>
-            </h4>
-            <div class="img-poat-block">
-                <img src="/template/img/elements/post.png" alt="">
-                <a href="post-full.php">
-                    Читать полностью
-                </a>
-            </div>
-            <div class="text-prev-post">
-                Начну я с отечественного производителя - ВКонтакте или VK.
-                Социальная сеть - это вам не мессенджер. Тут и лента новостей, хотя боты Telegram это умеют.
-                И группы, события, публичные страницы и прочее.<br><Br>
 
-                ВК даёт нам возможность создавать конференции текстовые или писать личные сообщения, звонков нет и
-                говорят, что летом выйдет мессенджер. Ждём!
-                Можно отправлять друг-другу текст, документы, аудио и видео файлы и геометки.
+        <?php foreach ($data['articles'] as $article): ?>
+            <div class="segment-post">
+                <h4><?= $article['title'] ?>
+                    <span class="data-post">
+                        <i><img src="/template/img/icon/i-4.png" alt=""></i>
+                        <?= $article['pub_date'] ?>
+                    </span>
+                </h4>
+                <div class="img-post-block">
+                    <img src="/template/img/articles/<?= $article['image'] ?>" alt="">
+                    <a href="/article?post=<?= $article['id'] ?>">
+                        Читать полностью
+                    </a>
+                </div>
+                <div class="text-prev-post">
+                    <?= mb_substr(html_entity_decode(strip_tags($article['content']), ENT_QUOTES | ENT_HTML401), 0, 550) . '...' ?>
+                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-        </div>
-        <div class="segment-post">
-            <h4>Сравнение Вконтакте и Telegram <span class="data-post"><i><img src="/template/img/icon/i-4.png" alt=""></i>26.05.2017</span>
-            </h4>
-            <div class="img-poat-block">
-                <img src="/template/img/elements/post.png" alt="">
-                <a href="post-full.php">
-                    Читать полностью
-                </a>
-            </div>
-            <div class="text-prev-post">
-                Начну я с отечественного производителя - ВКонтакте или VK.
-                Социальная сеть - это вам не мессенджер. Тут и лента новостей, хотя боты Telegram это умеют.
-                И группы, события, публичные страницы и прочее.<br><Br>
+        <?php endforeach; ?>
 
-                ВК даёт нам возможность создавать конференции текстовые или писать личные сообщения, звонков нет и
-                говорят, что летом выйдет мессенджер. Ждём!
-                Можно отправлять друг-другу текст, документы, аудио и видео файлы и геометки.
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="segment-post">
-            <h4>Сравнение Вконтакте и Telegram <span class="data-post"><i><img src="/template/img/icon/i-4.png" alt=""></i>26.05.2017</span>
-            </h4>
-            <div class="img-poat-block">
-                <img src="/template/img/elements/post.png" alt="">
-                <a href="post-full.php">
-                    Читать полностью
-                </a>
-            </div>
-            <div class="text-prev-post">
-                Начну я с отечественного производителя - ВКонтакте или VK.
-                Социальная сеть - это вам не мессенджер. Тут и лента новостей, хотя боты Telegram это умеют.
-                И группы, события, публичные страницы и прочее.<br><Br>
-
-                ВК даёт нам возможность создавать конференции текстовые или писать личные сообщения, звонков нет и
-                говорят, что летом выйдет мессенджер. Ждём!
-                Можно отправлять друг-другу текст, документы, аудио и видео файлы и геометки.
-            </div>
-            <div class="clear"></div>
-        </div>
-        <a href="#" class="btn-post-full"><i><img src="/template/img/elements/plus.png" alt=""></i>Читать остальное</a>
+        <!--        <a href="#" class="btn-post-full"><i><img src="/template/img/elements/plus.png" alt=""></i>Читать остальное</a>-->
     </div>
 </div>

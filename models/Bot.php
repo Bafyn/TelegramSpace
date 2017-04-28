@@ -68,7 +68,7 @@ class Bot extends Model
         }
 
         if (mb_strlen($username) == 0 || mb_strlen($username) > 90) {
-            return 'Длина username бота может быть от 0 до 90 символов!';
+            return 'Длина username бота может быть от 1 до 90 символов!';
         }
 
         if (strpos($username, " ") !== false) {
@@ -82,11 +82,11 @@ class Bot extends Model
         }
 
         if (mb_strlen($title) == 0 || mb_strlen($title) > 50) {
-            return 'Длина названия может быть от 0 до 50 символов!';
+            return 'Длина названия может быть от 1 до 50 символов!';
         }
 
         if (mb_strlen($description) == 0 || mb_strlen($description) > 200) {
-            return 'Длина описания может быть от 0 до 200 символов!';
+            return 'Длина описания может быть от 1 до 200 символов!';
         }
 
         return 'ok';
@@ -135,12 +135,12 @@ class Bot extends Model
      *
      * @return array - information about bots
      */
-    public static function get_bots($is_only_active)
+    public static function get_bots($is_active_only)
     {
         $sql = 'SELECT * FROM `bots`';
 
-        if ($is_only_active) {
-            $sql .= ' WHERE `status` = 1 ORDER BY `rating`';
+        if ($is_active_only) {
+            $sql .= ' WHERE `status` = 1 ORDER BY `rating` DESC';
         }
 
         $result = $GLOBALS['DBH']->query($sql);

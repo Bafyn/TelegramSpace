@@ -24,8 +24,7 @@ class BotController extends Controller
 
     public function action_info()
     {
-        $data = array();
-        $data += Main::get_page_parts();
+        $data = Main::get_page_parts();
 
         $this->view->generate('botsinfo.php', $data);
 

@@ -10,9 +10,11 @@ session_start();
 require_once 'core/Model.php';
 require_once 'models/Data.php';
 require_once 'models/Channel.php';
-require_once 'components/DB.php';
 require_once 'models/Bot.php';
 require_once 'models/Main.php';
+require_once 'models/Sticker.php';
+require_once 'models/Article.php';
+require_once 'components/DB.php';
 $params = include('config/db_params.php');
 $GLOBALS['DBH'] = DB::getConnection($params);
 $GLOBALS['DBH']->exec("SET NAMES utf8");
@@ -163,7 +165,7 @@ if ($_POST['purpose'] === 'edit_content_image') {
     $old_extension = mb_substr($page_element['code'], mb_strrpos($page_element['code'], '.') + 1);
     $new_name = $started_path . '.' . $extension;
 
-    if (!move_uploaded_file($_FILES['img']['tmp_name'], mb_substr($new_name, 1))) {
+    if (!is_uploaded_file($_FILES['img']["tmp_name"]) || !move_uploaded_file($_FILES['img']['tmp_name'], mb_substr($new_name, 1))) {
         echo 'error';
         return;
     }
@@ -196,4 +198,64 @@ if ($_POST['purpose'] === 'get_old_content') {
     } else {
         echo json_encode($element);
     }
+}
+
+
+if ($_POST['purpose'] === 'edit_sticker') {
+    $old_title = Data::getPostParameter('sticker_old_title');
+    $_SESSION['old_title_sticker'] = $old_title;
+    $sticker = Sticker::get_sticker_by_title($old_title);
+
+    if (!$sticker['id']) {
+        echo 'error';
+    } else {
+        echo json_encode($sticker);
+    }
+}
+
+if ($_POST['purpose'] === 'delete_sticker') {
+    $old_title = Data::getPostParameter('sticker_old_title');
+
+    $sql = 'DELETE FROM `stickers` WHERE `title` = :title';
+    $result = $GLOBALS['DBH']->prepare($sql);
+
+    $result->bindParam(':title', $old_title, PDO::PARAM_STR);
+    $result->execute();
+
+    if ($result->rowCount() != 0) {
+        echo 'ok';
+        return;
+    }
+
+    echo 'error';
+}
+
+
+if ($_POST['purpose'] === 'edit_article') {
+    $old_title = Data::getPostParameter('article_old_title');
+    $_SESSION['old_title_article'] = $old_title;
+    $article = Article::get_article_by_title($old_title);
+
+    if (!$article['id']) {
+        echo 'error';
+    } else {
+        echo json_encode($article);
+    }
+}
+
+if ($_POST['purpose'] === 'delete_article') {
+    $old_title = Data::getPostParameter('article_old_title');
+
+    $sql = 'DELETE FROM `articles` WHERE `title` = :title';
+    $result = $GLOBALS['DBH']->prepare($sql);
+
+    $result->bindParam(':title', $old_title, PDO::PARAM_STR);
+    $result->execute();
+
+    if ($result->rowCount() != 0) {
+        echo 'ok';
+        return;
+    }
+
+    echo 'error';
 }

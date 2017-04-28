@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 // 2. System files connection
 define('ROOT', dirname(__FILE__));
+define('IMAGE_DEFAULT', 'noimage.png');
 //require_once(ROOT.'/components/Router.php');
 require_once(ROOT . '/components/Autoload.php');
 

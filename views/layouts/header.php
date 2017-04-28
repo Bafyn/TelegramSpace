@@ -13,7 +13,7 @@
     if (!Admin::is_admin_logged()): ?>
         <script type="application/javascript">
             $(document).ready(function () {
-                $('.fa[class*="cat_"').remove();
+                $('.fa[class*="part_"').remove();
             });
         </script>
     <?php endif; ?>

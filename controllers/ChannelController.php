@@ -16,7 +16,7 @@ class ChannelController extends Controller
 
     public function action_index()
     {
-        $data = $this->model->get_data();
+        $data = $this->model->get_particular_channels();
 
         if (!$data['is_valid_category']) {
             Router::error404();

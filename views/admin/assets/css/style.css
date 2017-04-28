@@ -2373,7 +2373,13 @@ label {
 }
 
 .editor_cont {
-    max-height: 800px;
+    max-height: none !important;
+    margin-top: 15px !important;
+}
+
+.editor_cont .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .table_cont_active {
@@ -2427,6 +2433,10 @@ form .modal-body textarea {
 .editor_submit {
     text-align: center !important;
     margin: 30px !important;
+}
+
+#cke_dialog_tabs_77 a#cke_Upload_136 {
+    /*display: inline-block !important;*/
 }
 
 /*/My styles*/

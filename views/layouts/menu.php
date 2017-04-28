@@ -102,7 +102,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/main/articles">
+                    <a href="/article/list">
                         Статьи
                     </a>
                 </li>

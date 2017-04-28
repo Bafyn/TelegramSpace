@@ -938,32 +938,10 @@ header {
 
 .sticer-img img {
     width: 510px;
-    height: 330px;
+    /*height: 330px;*/
 }
 
-.blokc-text-desc-sticer {
-    width: 520px;
-    float: left;
-    margin-left: 20px;
-    padding: 45px 0;
-    border-top: 1px solid #2be6c2;
-    border-bottom: 1px solid #2be6c2;
-    margin-top: 30px;
-}
-
-.blokc-text-desc-sticer h4 {
-    color: #404040;
-    font: 24px MuseoSans700;
-    margin-bottom: 25px;
-}
-
-.blokc-text-desc-sticer p {
-    color: #404040;
-    font: 18px MuseoSans500;
-    line-height: 30px;
-}
-
-.blokc-text-desc-sticer-2 {
+.segment-sticer:nth-child(2n) div:first-of-type {
     width: 520px;
     float: left;
     margin-right: 20px;
@@ -973,13 +951,35 @@ header {
     margin-top: 30px;
 }
 
-.blokc-text-desc-sticer-2 h4 {
+.segment-sticer:nth-child(2n) h4 {
     color: #404040;
     font: 24px MuseoSans700;
     margin-bottom: 25px;
 }
 
-.blokc-text-desc-sticer-2 p {
+.segment-sticer:nth-child(2n) p {
+    color: #404040;
+    font: 18px MuseoSans500;
+    line-height: 30px;
+}
+
+.segment-sticer:nth-child(2n + 1) div:first-of-type {
+    width: 520px;
+    float: right;
+    margin-left: 20px;
+    padding: 45px 0;
+    border-top: 1px solid #2be6c2;
+    border-bottom: 1px solid #2be6c2;
+    margin-top: 30px;
+}
+
+.segment-sticer:nth-child(2n + 1) h4 {
+    color: #404040;
+    font: 24px MuseoSans700;
+    margin-bottom: 25px;
+}
+
+.segment-sticer:nth-child(2n + 1) p {
     color: #404040;
     font: 18px MuseoSans500;
     line-height: 30px;
@@ -1001,7 +1001,7 @@ header {
     color: #20aff5;
 }
 
-.link-stick {
+.link-stick, .go-to-articles {
     color: #fff;
     text-align: center;
     display: block;
@@ -1012,6 +1012,11 @@ header {
     line-height: 56px;
     background: #2aa0da;
     margin: 0 auto;
+}
+
+.go-to-articles {
+    margin-top: 70px;
+    margin-bottom: 70px;
 }
 
 .slider-canal-slider {
@@ -1438,12 +1443,12 @@ header {
     top: -2px;
 }
 
-.img-poat-block {
+.img-post-block {
     width: 250px;
     float: left;
 }
 
-.img-poat-block a {
+.img-post-block a {
     width: 100%;
     height: 55px;
     text-align: center;
@@ -1457,7 +1462,7 @@ header {
     letter-spacing: 1px;
 }
 
-.img-poat-block img {
+.img-post-block img {
     width: 250px;
     height: 150px;
 }
@@ -1465,6 +1470,7 @@ header {
 .text-prev-post {
     width: 840px;
     float: left;
+    text-align: justify;
     padding-left: 30px;
     color: #404040;
     font: 16px MuseoSans500;

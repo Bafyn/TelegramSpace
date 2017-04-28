@@ -2,7 +2,6 @@
 if (!Admin::is_admin_logged()) {
     Router::header_location('/admin/login');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -222,66 +221,66 @@ if (!Admin::is_admin_logged()) {
     <!-- /Modal edit bot-->
 
     <!-- Modal edit article-->
-    <div class="modal fade" id="modal_edit_article" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Редактировать статью</h4>
-                </div>
-                <form method="post" action="/admin/editarticle" enctype="multipart/form-data"
-                      class="form-horizontal style-form">
-                    <div class="modal-body">
-                        <input type="hidden" name="secret_edit_article" value="<?= rand(); ?>"/>
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Название</label>
-                            <div class="col-sm-10">
-                                <input type="text" maxlength="150" required placeholder="Название" name="article_title"
-                                       class="form-control">
-                                <span class="help-block">Максимальная длина - 150 символов</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Содержимое</label>
-                            <div class="col-sm-10">
-                                <textarea placeholder="Содержимое" name="article_description" required
-                                          maxlength="5000" class="form-control"></textarea>
-                                <span class="help-block">Максимальная длина - 5000 символов</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Дата публикации</label>
-                            <div class="col-sm-10">
-                                <input type="date" required name="article_category" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Картинка</label>
-                            <div class="col-sm-7">
-                                <input type="file" placeholder="https://t.me/" name="article_image"
-                                       class="form-control">
-                                <span class="help-block">Наилучший размер - 470x310 пикселей (но возможны и другие)</span>
-                            </div>
-                            <div class="col-sm-3 edit_subject_img">
-                                <img src="/template/img/articles/c-1.png">
-                            </div>
-                        </div>
-                        <div class="checkbox chackbox_status">
-                            <label>
-                                <input type="checkbox" name="article_status">
-                                Опубликовать статью
-                            </label>
-                        </div>
-                    </div>
-                    <div class="modal-footer modal_footer_admin">
-                        <input type="submit" name="edit_article_submit" class="btn btn-lg btn-primary"
-                               value="Сохранить"/>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <!--    <div class="modal fade" id="modal_edit_article" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"-->
+    <!--         aria-hidden="true">-->
+    <!--        <div class="modal-dialog">-->
+    <!--            <div class="modal-content">-->
+    <!--                <div class="modal-header">-->
+    <!--                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+    <!--                    <h4 class="modal-title" id="myModalLabel">Редактировать статью</h4>-->
+    <!--                </div>-->
+    <!--                <form method="post" action="/admin/editarticle" enctype="multipart/form-data"-->
+    <!--                      class="form-horizontal style-form">-->
+    <!--                    <div class="modal-body">-->
+    <!--                        <input type="hidden" name="secret_edit_article" value="--><? //= rand(); ?><!--"/>-->
+    <!--                        <div class="form-group">-->
+    <!--                            <label class="col-sm-2 col-sm-2 control-label">Название</label>-->
+    <!--                            <div class="col-sm-10">-->
+    <!--                                <input type="text" maxlength="150" required placeholder="Название" name="article_title"-->
+    <!--                                       class="form-control">-->
+    <!--                                <span class="help-block">Максимальная длина - 150 символов</span>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="form-group">-->
+    <!--                            <label class="col-sm-2 col-sm-2 control-label">Содержимое</label>-->
+    <!--                            <div class="col-sm-10">-->
+    <!--                                <textarea placeholder="Содержимое" name="article_description" required-->
+    <!--                                          maxlength="5000" class="form-control"></textarea>-->
+    <!--                                <span class="help-block">Максимальная длина - 5000 символов</span>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="form-group">-->
+    <!--                            <label class="col-sm-2 col-sm-2 control-label">Дата публикации</label>-->
+    <!--                            <div class="col-sm-10">-->
+    <!--                                <input type="date" required name="article_category" class="form-control">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="form-group">-->
+    <!--                            <label class="col-sm-2 col-sm-2 control-label">Картинка</label>-->
+    <!--                            <div class="col-sm-7">-->
+    <!--                                <input type="file" placeholder="https://t.me/" name="article_image"-->
+    <!--                                       class="form-control">-->
+    <!--                                <span class="help-block">Наилучший размер - 470x310 пикселей (но возможны и другие)</span>-->
+    <!--                            </div>-->
+    <!--                            <div class="col-sm-3 edit_subject_img">-->
+    <!--                                <img src="/template/img/articles/c-1.png">-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="checkbox chackbox_status">-->
+    <!--                            <label>-->
+    <!--                                <input type="checkbox" name="article_status">-->
+    <!--                                Опубликовать статью-->
+    <!--                            </label>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="modal-footer modal_footer_admin">-->
+    <!--                        <input type="submit" name="edit_article_submit" class="btn btn-lg btn-primary"-->
+    <!--                               value="Сохранить"/>-->
+    <!--                    </div>-->
+    <!--                </form>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
     <!-- /Modal edit article-->
 
     <!-- Modal edit sticker-->
@@ -301,7 +300,7 @@ if (!Admin::is_admin_logged()) {
                             <label class="col-sm-2 col-sm-2 control-label">Название</label>
                             <div class="col-sm-10">
                                 <input type="text" maxlength="50" required placeholder="Название" name="sticker_title"
-                                       class="form-control">
+                                       class="form-control sticker_title">
                                 <span class="help-block">Максимальная длина - 50 символов</span>
                             </div>
                         </div>
@@ -309,8 +308,15 @@ if (!Admin::is_admin_logged()) {
                             <label class="col-sm-2 col-sm-2 control-label">Описание</label>
                             <div class="col-sm-10">
                                 <textarea placeholder="Описание" name="sticker_description" required
-                                          maxlength="200" class="form-control"></textarea>
-                                <span class="help-block">Максимальная длина - 200 символов</span>
+                                          maxlength="200" class="form-control sticker_description"></textarea>
+                                <span class="help-block">Максимальная длина - 300 символов</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Рейтинг</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="Рейтинг" name="sticker_rating"
+                                       class="form-control sticker_rating">
                             </div>
                         </div>
                         <div class="form-group">
@@ -321,12 +327,12 @@ if (!Admin::is_admin_logged()) {
                                 <span class="help-block">Наилучший размер - 510x330 пикселей (но возможны и другие)</span>
                             </div>
                             <div class="col-sm-3 edit_subject_img">
-                                <img src="/template/img/stickers/c-1.png">
+                                <img src="" class="sticker_image">
                             </div>
                         </div>
                         <div class="checkbox chackbox_status">
                             <label>
-                                <input type="checkbox" name="sticker_status">
+                                <input type="checkbox" name="sticker_status" class="sticker_status">
                                 Опубликовать стикеры
                             </label>
                         </div>
@@ -533,6 +539,11 @@ if (!Admin::is_admin_logged()) {
                         <i class="fa fa-picture-o"></i>
                         <span>Стикеры</span>
                     </a>
+                    <ul class="sub">
+                        <li class="active"><a href="javascript:;" class="stickers_menu">Список</a></li>
+                        <li><a href="javascript:;" data-toggle="modal" data-target="#modal_edit_sticker"
+                               class="add_sticker_btn">Добавить стикеры</a></li>
+                    </ul>
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;" class="categories_menu">
@@ -613,35 +624,36 @@ if (!Admin::is_admin_logged()) {
                         <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
                             <div class="box1">
                                 <span class="li_tv"></span>
-                                <h3><?= $data['active_channels_num'] ?></h3>
+                                <h3><?= $data['active_channels_num'] ?> / <?= count($data['channels']) ?></h3>
                             </div>
                             <p>Каналов уже опубликовано!</p>
                         </div>
                         <div class="col-md-2 col-sm-2 box0">
                             <div class="box1">
                                 <span class="li_settings"></span>
-                                <h3><?= $data['active_bots_num'] ?></h3>
+                                <h3><?= $data['active_bots_num'] ?> / <?= count($data['bots']) ?></h3>
                             </div>
                             <p>Ботов уже запущено!</p>
                         </div>
                         <div class="col-md-2 col-sm-2 box0">
                             <div class="box1">
                                 <span class="li_note"></span>
-                                <h3><?= $data['active_articles_num'] ?></h3>
+                                <h3><?= $data['active_articles_num'] ?> / <?= count($data['articles']) ?></h3>
                             </div>
                             <p>Статей опубликовано!</p>
                         </div>
                         <div class="col-md-2 col-sm-2 box0">
                             <div class="box1">
                                 <span class="li_photo"></span>
-                                <h3><?= $data['active_articles_num'] ?></h3>
+                                <h3><?= $data['active_stickers_num'] ?> / <?= count($data['stickers']) ?></h3>
                             </div>
                             <p>Наборов стикеров активно!</p>
                         </div>
                         <div class="col-md-2 col-sm-2 box0">
                             <div class="box1">
                                 <span class="li_stack"></span>
-                                <h3><?= $data['active_categories_num'] ?></h3>
+                                <h3><?= $data['active_categories_num'] ?>
+                                    / <?= count($data['channel_categories']) ?></h3>
                             </div>
                             <p>Категорий каналов активно!</p>
                         </div>
@@ -660,12 +672,40 @@ if (!Admin::is_admin_logged()) {
 
                     <!--CKEditor-->
                     <div class="editor_cont">
-                        <form method="post">
-                        <textarea name="article_editor" id="article_editor" rows="10" cols="80">
-                            This is my textarea to be replaced with CKEditor.
-                        </textarea>
+                        <div class="chackbox_status" style="margin-bottom: 30px;">
+                            <label class="editor_title"></label>
+                        </div>
+                        <form method="post" class="form-horizontal style-form" enctype="multipart/form-data">
+                            <input type="hidden" name="secret_action_article" value="<?= rand(); ?>"/>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Название</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="article_title" class="form-control article_title"
+                                           value="<?= isset($article_add['title']) ? $article_add['title'] : '' ?>">
+                                    <span class="help-block">Максимальная длина - 150 символов</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">Изображение превью </label>
+                                <div class="col-sm-7">
+                                    <input type="file" name="article_image" class="form-control"/>
+                                    <span class="help-block">Наилучший размер - 250x150 пикселей</span>
+                                </div>
+                                <div class="col-sm-3 edit_subject_img">
+                                    <img src="" class="article_image" style="width: 120px; height: 80px;">
+                                </div>
+                            </div>
+                            <div class="checkbox chackbox_status" style="margin-top: -20px; margin-bottom: 30px;">
+                                <label>
+                                    <input type="checkbox" class="article_status" name="article_status">
+                                    Опубликовать статью
+                                </label>
+                            </div>
+                            <textarea name="article_content" id="article_editor" rows="30" cols="80"
+                                      placeholder="Содержимое статьи"><?= isset($article_add['content']) ? $article_add['content'] : '' ?></textarea>
                             <div class="editor_submit">
-                                <input type="submit" class="btn btn-lg btn-primary" value="Сохранить"/>
+                                <input type="submit" name="action_article_submit" class="btn btn-lg btn-primary"
+                                       value="Сохранить"/>
                             </div>
                         </form>
                     </div>
@@ -801,9 +841,12 @@ if (!Admin::is_admin_logged()) {
                                     <tbody>
 
                                     <?php foreach ($data['articles'] as $article): ?>
-                                        <tr>
-                                            <td><?= mb_substr($article['title'], 0, 15) . '...' ?></td>
-                                            <td><?= mb_substr($article['content'], 0, 15) . '...' ?> </td>
+                                        <tr class="article_record">
+                                            <td>
+                                                <?= mb_substr($article['title'], 0, 15) . '...' ?>
+                                                <input type="hidden" value="<?= $article['title'] ?>"/>
+                                            </td>
+                                            <td><?= mb_substr(html_entity_decode(strip_tags($article['content']), ENT_QUOTES | ENT_HTML401), 0, 25) . '...' ?> </td>
                                             <td><?= $article['pub_date'] ?></td>
                                             <td class="channel_img_table">
                                                 <img src="/template/img/articles/<?= $article['image'] ?>">
@@ -812,10 +855,11 @@ if (!Admin::is_admin_logged()) {
                                                 <span class="label label-mini label-<?= $article['status_class'] ?>"><?= $article['status_description'] ?></span>
                                             </td>
                                             <td>
-                                                <button data-toggle="modal" data-target="#modal_edit_article"
-                                                        class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>
+                                                <button class="btn btn-primary btn-xs edit_article_btn"><i
+                                                            class="fa fa-pencil"></i>
                                                 </button>
-                                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i>
+                                                <button class="btn btn-danger btn-xs delete_article_btn"><i
+                                                            class="fa fa-trash-o "></i>
                                                 </button>
                                             </td>
                                         </tr>
@@ -838,6 +882,7 @@ if (!Admin::is_admin_logged()) {
                                         <th class="hidden-phone"><i class="fa fa-question-circle"></i> Название</th>
                                         <th><i class="fa fa-bookmark"></i> Описание</th>
                                         <th><i class="fa fa-bookmark"></i> Картинка</th>
+                                        <th><i class="fa fa-bookmark"></i> Рейтинг</th>
                                         <th><i class=" fa fa-edit"></i> Статус</th>
                                         <th></th>
                                     </tr>
@@ -845,20 +890,23 @@ if (!Admin::is_admin_logged()) {
                                     <tbody>
 
                                     <?php foreach ($data['stickers'] as $sticker): ?>
-                                        <tr>
-                                            <td><?= mb_substr($sticker['title'], 0, 15) . '...' ?></td>
+                                        <tr class="sticker_record">
+                                            <td><?= $sticker['title'] ?></td>
                                             <td><?= mb_substr($sticker['description'], 0, 15) . '...' ?> </td>
                                             <td class="channel_img_table">
                                                 <img src="/template/img/stickers/<?= $sticker['image'] ?>">
                                             </td>
+                                            <td><?= $sticker['rating'] ?></td>
                                             <td>
                                                 <span class="label label-mini label-<?= $sticker['status_class'] ?>"><?= $sticker['status_description'] ?></span>
                                             </td>
                                             <td>
                                                 <button data-toggle="modal" data-target="#modal_edit_sticker"
-                                                        class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>
+                                                        class="btn btn-primary edit_sticker_btn btn-xs"><i
+                                                            class="fa fa-pencil"></i>
                                                 </button>
-                                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i>
+                                                <button class="btn btn-danger delete_sticker_btn btn-xs"><i
+                                                            class="fa fa-trash-o "></i>
                                                 </button>
                                             </td>
                                         </tr>
@@ -887,7 +935,7 @@ if (!Admin::is_admin_logged()) {
                                     <tbody>
 
                                     <?php foreach ($data['channel_categories'] as $category): ?>
-                                        <tr>
+                                        <tr class="category_record">
                                             <td><?= $category['title'] ?></td>
                                             <td class="channel_img_table">
                                                 <img src="/template/img/categories/<?= $category['image'] ?>">
@@ -1067,7 +1115,6 @@ if (!Admin::is_admin_logged()) {
 <script src="/views/admin/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 <script src="/views/admin/assets/js/jquery.sparkline.js"></script>
 
-
 <!--common script for all pages-->
 <script src="/views/admin/assets/js/common-scripts.js"></script>
 
@@ -1081,10 +1128,10 @@ if (!Admin::is_admin_logged()) {
 <!--script for editing subjects-->
 <script src="/template/js/js-realst.js"></script>
 <script src="/ckeditor/ckeditor.js"></script>
-
 <script>
-    CKEDITOR.replace('article_editor');
+    var editor = CKEDITOR.replace('article_editor');
 </script>
+
 
 <script type="text/javascript">
     $(document).ready(function () {

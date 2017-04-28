@@ -223,6 +223,16 @@ $(document).ready(function () {
     });
     // /Admin menu action
 
+    $('.add_sticker_btn').click(function () {
+        $('#modal_edit_sticker .modal-title').text('Добавить набор стикеров');
+        $('#modal_edit_sticker form').attr('action', '/admin/addsticker');
+        $('.sticker_title').val("");
+        $('.sticker_description').val("");
+        $('.sticker_rating').val("");
+        $('.sticker_image').attr('src', '/template/img/stickers/noimage.png');
+        $('.sticker_status').prop('checked', false);
+    });
+
     $('.add_category_btn').click(function () {
         $('#modal_edit_category .modal-title').text('Добавить категорию канала');
         $('#modal_edit_category form').attr('action', '/admin/addcategory');
@@ -232,15 +242,20 @@ $(document).ready(function () {
     });
 
     $('.add_article_btn').click(function () {
-        hideAllTables(6);
+        hideAllTables();
+        $('.editor_cont form').attr('action', '/admin/addarticle');
+        $('.editor_title').text('Добавить статью');
+        $('.article_image').attr('src', '/template/img/articles/noimage.png');
         $('.editor_cont').slideDown();
     });
 
     $('.edit_channel_btn').click(function (e) {
-        var channel_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
+        var channel_old_link;
 
         if (e.target.nodeName == "I") {
             channel_old_link = e.target.parentElement.parentElement.parentElement.children[0].children[0].getAttribute("href");
+        } else {
+            channel_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
         }
 
         $.ajax({
@@ -264,16 +279,18 @@ $(document).ready(function () {
                 $('.channel_extra_info').text(data['extra_info']);
                 $(".channel_category option:contains('" + channel_category + "')").attr("selected", "selected");
                 $('.channel_image').attr('src', '/template/img/channels/' + data['image']);
-                $('.channel_status').prop('checked', data['status'] === '1' ? true : false);
+                $('.channel_status').prop('checked', data['status'] === '1');
             }
         });
     });
 
     $('.delete_channel_btn').click(function (e) {
-        var channel_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
+        var channel_old_link;
 
         if (e.target.nodeName == "I") {
             channel_old_link = e.target.parentElement.parentElement.parentElement.children[0].children[0].getAttribute("href");
+        } else {
+            channel_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
         }
 
         var isDelete = confirm("Удалить канал со ссылкой " + channel_old_link + "?");
@@ -299,15 +316,19 @@ $(document).ready(function () {
     });
 
     $('.edit_bot_btn').click(function (e) {
-        var bot_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
-        var bot_old_username = e.target.parentElement.parentElement.children[1].innerText;
+        var bot_old_link;
+        var bot_old_username;
 
         if (e.target.nodeName == "I") {
             bot_old_link = e.target.parentElement.parentElement.parentElement.children[0].children[0].getAttribute("href");
             bot_old_username = e.target.parentElement.parentElement.parentElement.children[1].innerText;
+        } else {
+            bot_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
+            bot_old_username = e.target.parentElement.parentElement.children[1].innerText;
         }
 
         $.ajax({
+
             url: '/ajax.php',
             type: 'POST',
             data: 'purpose=edit_bot&bot_old_link=' + bot_old_link + '&bot_old_username=' + bot_old_username,
@@ -326,16 +347,18 @@ $(document).ready(function () {
                 $('.bot_rating').val(data['rating']);
                 $('.bot_extra_info').text(data['extra_info']);
                 $('.bot_image').attr('src', '/template/img/bots/' + data['image']);
-                $('.bot_status').prop('checked', data['status'] === '1' ? true : false);
+                $('.bot_status').prop('checked', data['status'] === '1');
             }
         });
     });
 
     $('.delete_bot_btn').click(function (e) {
-        var bot_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
+        var bot_old_link;
 
         if (e.target.nodeName == "I") {
             bot_old_link = e.target.parentElement.parentElement.parentElement.children[0].children[0].getAttribute("href");
+        } else {
+            bot_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
         }
 
         var isDelete = confirm("Удалить бота со ссылкой " + bot_old_link + "?");
@@ -360,14 +383,82 @@ $(document).ready(function () {
         }
     });
 
+
+    $('.edit_article_btn').click(function (e) {
+        hideAllTables();
+        $('.editor_cont form').attr('action', '/admin/editarticle');
+        $('.editor_title').text('Редактировать статью');
+
+        var article_old_title;
+
+        if (e.target.nodeName == "I") {
+            article_old_title = e.target.parentElement.parentElement.parentElement.children[0].children[0].value;
+        } else {
+            article_old_title = e.target.parentElement.parentElement.children[0].children[0].value;
+        }
+
+        $.ajax({
+            url: '/ajax.php',
+            type: 'POST',
+            data: 'purpose=edit_article&article_old_title=' + article_old_title,
+            success: function (data) {
+                if (data === 'error') {
+                    alert('Произошла ошибка при заполнении данных. Попробуйте позже');
+                    return;
+                }
+                data = JSON.parse(data);
+
+                $('.article_title').val(data['title']);
+                editor.setData(data['content']);
+                $('.article_image').attr('src', '/template/img/articles/' + data['image']);
+                $('.article_status').prop('checked', data['status'] === '1');
+                $('.editor_cont').slideDown();
+            }
+        });
+    });
+
+    $('.delete_article_btn').click(function (e) {
+        var article_old_title;
+        var article_old_date;
+
+        if (e.target.nodeName == "I") {
+            article_old_title = e.target.parentElement.parentElement.parentElement.children[0].children[0].value;
+            article_old_date = e.target.parentElement.parentElement.parentElement.children[2].innerText;
+        } else {
+            article_old_title = e.target.parentElement.parentElement.children[0].children[0].value;
+            article_old_date = e.target.parentElement.parentElement.children[2].innerText;
+        }
+
+        var isDelete = confirm("Удалить статью " + article_old_title + " за " + article_old_date + "?");
+
+        if (isDelete) {
+            $.ajax({
+                url: '/ajax.php',
+                type: 'POST',
+                data: 'purpose=delete_article&article_old_title=' + article_old_title,
+                success: function (data) {
+                    if (data === 'error') {
+                        alert('Произошла ошибка. Попробуйте позже');
+                        return;
+                    }
+
+                    $('.article_record').remove(':contains(' + article_old_title + ')');
+                    alert('Статья была успешно удалена!');
+                }
+            });
+        }
+    });
+
     $('.edit_category_btn').click(function (e) {
         $('#modal_edit_category .modal-title').text('Редактировать категорию канала');
         $('#modal_edit_category form').attr('action', '/admin/editcategory');
 
-        var category_old_title = e.target.parentElement.parentElement.children[0].innerText;
+        var category_old_title;
 
         if (e.target.nodeName == "I") {
             category_old_title = e.target.parentElement.parentElement.parentElement.children[0].innerText;
+        } else {
+            category_old_title = e.target.parentElement.parentElement.children[0].innerText;
         }
 
         $.ajax({
@@ -384,35 +475,98 @@ $(document).ready(function () {
 
                 $('.category_title').val(data['title']);
                 $('.category_image').attr('src', '/template/img/categories/' + data['image']);
-                $('.category_status').prop('checked', data['status'] === '1' ? true : false);
+                $('.category_status').prop('checked', data['status'] === '1');
             }
         });
     });
 
     $('.delete_category_btn').click(function (e) {
-        var bot_old_link = e.target.parentElement.parentElement.children[0].children[0].getAttribute("href");
+        var category_old_title;
 
         if (e.target.nodeName == "I") {
-            bot_old_link = e.target.parentElement.parentElement.parentElement.children[0].children[0].getAttribute("href");
+            category_old_title = e.target.parentElement.parentElement.parentElement.children[0].innerText;
+        } else {
+            category_old_title = e.target.parentElement.parentElement.children[0].innerText;
         }
 
-        var isDelete = confirm("Удалить бота со ссылкой " + bot_old_link + "?");
+        var isDelete = confirm("Удалить категорию каналов " + category_old_title + "?");
 
         if (isDelete) {
             $.ajax({
                 url: '/ajax.php',
                 type: 'POST',
-                data: 'purpose=delete_bot&bot_old_link=' + bot_old_link,
+                data: 'purpose=delete_category&category_old_title=' + category_old_title,
                 success: function (data) {
                     if (data === 'error') {
                         alert('Произошла ошибка. Попробуйте позже');
                         return;
                     }
 
-                    bot_old_link = bot_old_link.slice(bot_old_link.lastIndexOf('/') + 1);
+                    $('.category_record').remove(':contains(' + category_old_title + ')');
+                    alert('Категория была успешно удалена!');
+                }
+            });
+        }
+    });
 
-                    $('.bot_record').remove(':contains(' + bot_old_link + ')');
-                    alert('Бот был успешно удален!');
+
+    $('.edit_sticker_btn').click(function (e) {
+        $('#modal_edit_sticker .modal-title').text('Редактировать стикер');
+        $('#modal_edit_sticker form').attr('action', '/admin/editsticker');
+
+        var sticker_old_title;
+
+        if (e.target.nodeName == "I") {
+            sticker_old_title = e.target.parentElement.parentElement.parentElement.children[0].innerText;
+        } else {
+            sticker_old_title = e.target.parentElement.parentElement.children[0].innerText;
+        }
+
+        $.ajax({
+            url: '/ajax.php',
+            type: 'POST',
+            data: 'purpose=edit_sticker&sticker_old_title=' + sticker_old_title,
+            success: function (data) {
+                if (data === 'error') {
+                    alert('Произошла ошибка при заполнении данных. Попробуйте позже');
+                    return;
+                }
+
+                data = JSON.parse(data);
+
+                $('.sticker_title').val(data['title']);
+                $('.sticker_rating').val(data['rating']);
+                $('.sticker_description').val(data['description']);
+                $('.sticker_image').attr('src', '/template/img/stickers/' + data['image']);
+                $('.sticker_status').prop('checked', data['status'] === '1');
+            }
+        });
+    });
+
+    $('.delete_sticker_btn').click(function (e) {
+        var sticker_old_title;
+
+        if (e.target.nodeName == "I") {
+            sticker_old_title = e.target.parentElement.parentElement.parentElement.children[0].innerText;
+        } else {
+            sticker_old_title = e.target.parentElement.parentElement.children[0].innerText;
+        }
+
+        var isDelete = confirm("Удалить набор стикров " + sticker_old_title + "?");
+
+        if (isDelete) {
+            $.ajax({
+                url: '/ajax.php',
+                type: 'POST',
+                data: 'purpose=delete_sticker&sticker_old_title=' + sticker_old_title,
+                success: function (data) {
+                    if (data === 'error') {
+                        alert('Произошла ошибка. Попробуйте позже');
+                        return;
+                    }
+
+                    $('.sticker_record').remove(':contains(' + sticker_old_title + ')');
+                    alert('Набор стикеров был успешно удален!');
                 }
             });
         }

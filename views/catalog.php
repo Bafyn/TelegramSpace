@@ -124,5 +124,5 @@
 <a href="javascript:;" class="btn-dop-canal" style="margin-top: 0;">
     предложить канал
 </a>
-</body>
-</html>
+
+<?php require_once(ROOT . '/views/layouts/footer.php'); ?>
